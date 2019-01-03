@@ -19,7 +19,6 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     rm winehq.key
     apt -y install --install-recommends winehq-stable
     apt -y install winetricks
-    winetricks -q vcrun2013
     cd /usr/src
     git clone https://github.com/spacebeam/core.git
     cd core/core
@@ -30,4 +29,5 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     rm /opt/StarCraft.tar.gz
 
 %runscript
+    winetricks -q vcrun2013
     cd /opt/StarCraft && wine bwheadless.exe -e /opt/StarCraft/StarCraft.exe -l /opt/StarCraft/bwapi-data/BWAPI.dll --headful
