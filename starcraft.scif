@@ -1,0 +1,33 @@
+BootStrap: debootstrap
+OSVersion: xenial
+MirrorURL: http://us.archive.ubuntu.com/ubuntu/
+
+%environment
+    LANG=C.UTF-8
+    LC_ALL=C.UTF-8
+
+%post
+    sed -i 's/$/ universe/' /etc/apt/sources.list
+    apt update
+    apt -y install vim less build-essential sudo wget software-properties-common
+    dpkg --add-architecture i386
+    wget -nc https://dl.winehq.org/wine-builds/winehq.key
+    apt-key add winehq.key
+    apt -y install apt-transport-https git
+    apt-add-repository 'deb https://dl.winehq.org/wine-builds/ubuntu/ xenial main'
+    apt update
+    rm winehq.key
+    apt -y install --install-recommends winehq-stable
+    apt -y install winetricks
+    winetricks -q vcrun2013
+    cd /usr/src
+    git clone https://github.com/spacebeam/core.git
+    cd core/core
+    cat core.* > /opt/StarCraft.tar.gz
+    cd /opt
+    tar -zxvf StarCraft.tar.gz
+    rm -Rf /usr/src/core
+    rm /opt/StarCraft.tar.gz
+
+%runscript
+    cd /opt/StarCraft && wine bwheadless.exe -e /opt/StarCraft/StarCraft.exe -l /opt/StarCraft/bwapi-data/BWAPI.dll --headful
