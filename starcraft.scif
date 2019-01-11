@@ -20,12 +20,12 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
     apt -y install --install-recommends winehq-stable
     apt -y install winetricks
     cd /usr/src
-    git clone https://github.com/spacebeam/core.git
-    cd core/core
+    git clone https://github.com/spacebeam/starcraft-scif.git
+    cd starcraft-scif/core
     cat core.* > /opt/StarCraft.tar.gz
     cd /opt
     tar -zxvf StarCraft.tar.gz
-    rm -Rf /usr/src/core
+    rm -Rf /usr/src/starcraft-scif
     rm /opt/StarCraft.tar.gz
 
 %runscript
