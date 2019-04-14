@@ -30,4 +30,4 @@ MirrorURL: http://us.archive.ubuntu.com/ubuntu/
 
 %runscript
     winetricks -q vcrun2013
-    cd /opt/StarCraft && wine bwheadless.exe -e /opt/StarCraft/StarCraft.exe -l /opt/StarCraft/bwapi-data/BWAPI.dll
+    cd /opt/StarCraft && wine bwheadless.exe -e /opt/StarCraft/StarCraft.exe -l /opt/StarCraft/bwapi-data/BWAPI.dll --headful
