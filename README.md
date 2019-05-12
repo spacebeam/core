@@ -1,2 +1,4 @@
 # starcraft-scif
-StarCraft: Brood War in a Singularity Container, ready for bot play
+This repository prepares StarCraft: Brood War bots running in Wine inside a singularity image.
+
+It can download and launch bots that use BWAPI to communicate with the game.
