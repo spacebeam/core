@@ -20,7 +20,6 @@ MirrorURL: http://ftp.us.debian.org/debian/
     rm -Rf /usr/src/starcraft-scif
     rm /opt/StarCraft.tar.gz
     apt-get clean
-    apt-cache clean
 
 %labels
     name starcraft
