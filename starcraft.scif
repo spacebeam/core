@@ -6,25 +6,31 @@ MirrorURL: http://ftp.us.debian.org/debian/
     LANG=C.UTF-8
     LC_ALL=C.UTF-8
 
+%labels
+    name starcraft
+    maintainer jchassoul
+    version 0.1.0
+
 %post
     sed -i 's/$/ contrib/' /etc/apt/sources.list
     sed -i 's/$/ non-free/' /etc/apt/sources.list
     apt update
     dpkg --add-architecture i386
-    apt -y install --install-recommends git wine winetricks
+    apt -y install --install-recommends git apt-transport-https wget
     cd /usr/src
+    wget -nc https://dl.winehq.org/wine-builds/winehq.key
+    apt-key add winehq.key
+    apt-add-repository 'deb https://dl.winehq.org/wine-builds/debian/ buster main'
+    apt update
+    rm winehq.key
+    apt -y install --install-recommends winehq-stable winetricks
     git clone https://github.com/spacebeam/starcraft-scif.git
     cd starcraft-scif/include/core
     cat core* > /opt/StarCraft.tar.gz
-    tar -zxvf /opt/StarCraft.tar.gz  
+    tar -zxvf /opt/StarCraft.tar.gz -C /opt/
     rm -Rf /usr/src/starcraft-scif
     rm /opt/StarCraft.tar.gz
     apt-get clean
-
-%labels
-    name starcraft
-    maintainer jchassoul
-    version 0.1.0
 
 %runscript
     winetricks -q vcrun2013
