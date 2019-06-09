@@ -1,5 +1,5 @@
 BootStrap: debootstrap
-OSVersion: buster 
+OSVersion: stretch 
 MirrorURL: http://ftp.us.debian.org/debian/
 
 %environment
@@ -14,17 +14,28 @@ MirrorURL: http://ftp.us.debian.org/debian/
 %post
     sed -i 's/$/ contrib/' /etc/apt/sources.list
     sed -i 's/$/ non-free/' /etc/apt/sources.list
+    sed -i 's/$/ universe/' /etc/apt/sources.list
     apt update
-    dpkg --add-architecture i386
     apt -y install --install-recommends git apt-transport-https\
-    gnupg2 wget software-properties-common
-    cd /usr/src
+    gnupg2 wget software-properties-common curl build-essential\
+    gfortran pkg-config make cmake
+    dpkg --add-architecture i386
     wget -nc https://dl.winehq.org/wine-builds/winehq.key
     apt-key add winehq.key
-    apt-add-repository 'deb https://dl.winehq.org/wine-builds/debian/ buster main'
+    apt-add-repository 'deb https://dl.winehq.org/wine-builds/debian/ stretch main'
     apt update
     rm winehq.key
     apt -y install --install-recommends winehq-stable winetricks
+    cd /opt && git clone https://github.com/torch/distro.git torch --recursive
+    bash /opt/torch/install-deps
+    cd /opt/torch/ && ./install.sh
+    . /opt/torch/install/bin/torch-activate
+    git clone https://github.com/TorchCraft/TorchCraft.git /usr/src/tc13
+    cd /usr/src/tc13 && git checkout v1.3-0
+    git submodule update --init --recursive
+    luarocks install *.rockspec
+    git clone https://github.com/spacebeam/ophelia.git /opt/ophelia
+    cd /usr/src
     git clone https://github.com/spacebeam/starcraft-scif.git
     cd starcraft-scif/include/core
     cat core* > /opt/StarCraft.tar.gz
@@ -32,6 +43,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     rm -Rf /usr/src/starcraft-scif
     rm /opt/StarCraft.tar.gz
     apt-get clean
+    echo 'Go ahead HQ.'
 
 %runscript
     winetricks -q vcrun2013
