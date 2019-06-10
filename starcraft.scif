@@ -46,6 +46,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     echo 'Go ahead HQ.'
 
 %runscript
+    echo "Arguments received: $*"
     winetricks -q vcrun2013
     cd /opt/StarCraft
     wine SETUP.exe && wine bwheadless.exe -e ./StarCraft.exe --headful
