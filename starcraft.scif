@@ -30,15 +30,10 @@ MirrorURL: http://ftp.us.debian.org/debian/
     bash /opt/torch/install-deps
     cd /opt/torch/ && ./install.sh
     . /opt/torch/install/bin/torch-activate
-    git clone https://github.com/TorchCraft/TorchCraft.git /usr/src/tc13
-    cd /usr/src/tc13 && git checkout v1.3-0
-    git submodule update --init --recursive
-    luarocks install *.rockspec
-    git clone https://github.com/spacebeam/ophelia.git /opt/ophelia
-    cd /usr/src
-    git clone https://github.com/spacebeam/starcraft-scif.git
-    cd starcraft-scif/include/core
-    cat core* > /opt/StarCraft.tar.gz
+    git clone https://github.com/spacebeam/starcraft-scif.git\
+    /usr/src/starcraft-scif
+    cd /usr/src/starcraft-scif && luarocks install *.rockspec
+    cat include/core/core* > /opt/StarCraft.tar.gz
     tar -zxvf /opt/StarCraft.tar.gz -C /opt/
     rm -Rf /usr/src/starcraft-scif
     rm /opt/StarCraft.tar.gz
