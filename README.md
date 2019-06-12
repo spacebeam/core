@@ -26,6 +26,8 @@ Use this structure:
 
 - **/write/** - folder where bot can write.
 
+    Note that `bw` creates subdirectories in write folder, for each game it's own. The contents of the *write/GAME_xxx* folder will be copied to the *read* folder.
+
 - **/bot.json** - bot configuration. Minimal config is following:
 
         {
