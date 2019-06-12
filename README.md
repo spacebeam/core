@@ -31,7 +31,7 @@ Use this structure:
 - **/bot.json** - bot configuration. Minimal config is following:
 
         {
-          "name": "NEW BOT",
+          "name": "Potato",
           "race": "Terran",
           "botType": "JAVA",
         }
