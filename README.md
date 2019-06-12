@@ -31,13 +31,13 @@ Use this structure:
 - **/bot.json** - bot configuration. Minimal config is following:
 
         {
-          "name": "Potato",
+          "name": "POTATO",
           "race": "Terran",
-          "botType": "JAVA",
+          "type": "JAVA",
         }
 
     `name` must match `[a-zA-Z0-9_][a-zA-Z0-9_. -]{0,40}`
 
     `race` can be one of {`Terran`, `Zerg`, `Protoss`, `Random`}.
 
-    `botType` can be one of {`JAVA`, `AI_MODULE`, `EXE`, `PYTHON`, `LUAJIT`, `LFE`}
+    `type` can be one of {`JAVA`, `AI_MODULE`, `EXE`, `PYTHON`, `LUAJIT`, `LFE`}
