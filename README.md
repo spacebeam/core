@@ -33,7 +33,7 @@ Use this structure:
         {
           "name": "Potato",
           "race": "Terran",
-          "type": "Java",
+          "type": "JAVA",
         }
 
     `name` must match `[a-zA-Z0-9_][a-zA-Z0-9_. -]{0,40}`
