@@ -31,9 +31,9 @@ Use this structure:
 - **/bot.json** - bot configuration. Minimal config is following:
 
         {
-          "name": "POTATO",
+          "name": "Potato",
           "race": "Terran",
-          "type": "JAVA",
+          "type": "Java",
         }
 
     `name` must match `[a-zA-Z0-9_][a-zA-Z0-9_. -]{0,40}`
