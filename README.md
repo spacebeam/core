@@ -1,7 +1,7 @@
 # starcraft-scif
 This repository prepares StarCraft: Brood War bots running wine inside a singularity linux container image.
 
-It can download and launch win and nix bots that use BWAPI to communicate with the game.
+It can download and launch win and nix bots that use BWAPI `4.1.2, 4.2.0, 4.4.0` to communicate with the game.
 
 ## Headless play
 
