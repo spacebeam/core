@@ -1,7 +1,7 @@
 # starcraft-sif
 This repository prepares StarCraft: Brood War bots running inside a SIF ([Singularity](https://github.com/sylabs/singularity) Image Format) a single executable file based container image, auditable, secure, and easy to move using existing data mobility paradigms.
 
-It can download and launch [SSCAIT](http://sscaitournament.com/) C++ and Java bots or any 64bit Linux® bot with support for BWAPI `4.1.2, 4.2.0, 4.4.0`.
+It can download and launch Win32 C++ and Java bots or any native 64bit Linux® bot with support for BWAPI `4.1.2, 4.2.0, 4.4.0`.
 
 ## Headless play
 
