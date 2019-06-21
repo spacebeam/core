@@ -58,6 +58,8 @@ if args['command'] == 'status' then
 -- PLAY, PLAY, PLAY
 elseif args['command'] == 'play' then
     print('play')
+    print(args['bots'])
+    print(args['map'])
 else
     -- do something else
     print(messages[1])
