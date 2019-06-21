@@ -1,7 +1,7 @@
 #!/usr/bin/env luajit
 
 --
--- Bot War in a Singularity Container
+-- StarCraft:Brood War bots running inside a Singularity Linux® Container
 --
 
 local argparse = require("argparse")
@@ -16,7 +16,8 @@ local session_uuid = uuid()
 local parser = argparse() {
    name = "bw",
    description = "bw command line toolkit.",
-   epilog = "It can download and launch bots that use BWAPI to communicate with the game."
+   epilog = "It can download and launch Win32 C++ and Java bots " .. 
+   "or any Linux® bot with support for BWAPI 4.1.2, 4.2.0, 4.4.0."
 }
 
 -- Spawning bots at directory
@@ -51,33 +52,12 @@ local messages = {
 
 -- Parse your arguments
 local args = parser:parse()
-
--- Execute some stuff inside the computer OS
-local run = "singularity run --writable " .. args['directory']
-local start = "singularity instance.start --writable " .. args['directory']
-local stop = "singularity instance.stop " .. args['directory']
-
--- Do your stuff
+-- STATUS, STATUS, STATUS 
 if args['command'] == 'status' then
-    if args['unit'] then
-        print('Getting the status of unit ' .. args['unit'] )
-        -- status
-        print('Done.. ' .. messages[math.random(#messages)])
-    else
-        os.execute("singularity instance.list")
-        os.execute(spawn .. release .. " ping")
-    end
+    print('status')
 -- PLAY, PLAY, PLAY
 elseif args['command'] == 'play' then
-    if args['unit'] then
-        if args['execute'] then
-            os.execute(run .. args['unit'] .. ' ' .. args['execute'])
-        else
-            os.execute(run .. args['unit'])
-        end
-    else
-        print('Did you forget about the ' .. messages[4])
-    end
+    print('play')
 else
     -- do something else
     print(messages[1])
