@@ -1,7 +1,7 @@
 # starcraft-scif
-This repository prepares StarCraft: Brood War bots running inside a Singularity linux container.
+This repository prepares StarCraft: Brood War bots running inside a SIF (Singularity Image Format) a single executable file based container image, cryptographically signed, auditable, secure, and easy to move using existing data mobility paradigms.
 
-It can download and launch [SSCAIT](http://sscaitournament.com/) 32bit C++ and Java bots and native 64bit Linux bots that use BWAPI `4.1.2, 4.2.0, 4.4.0` to communicate with the game.
+It can download and launch [SSCAIT](http://sscaitournament.com/) 32bit C++, Java bots and native 64bit Linux® bots that use BWAPI `4.1.2, 4.2.0, 4.4.0` to communicate with the game.
 
 ## Headless play
 
