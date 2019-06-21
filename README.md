@@ -40,4 +40,4 @@ Use this structure:
 
     `race` can be one of {`Terran`, `Zerg`, `Protoss`, `Random`}
 
-    `type` can be one of {`Java`, `AI_MODULE`, `EXE`, `Python`, `LuaJIT`, `LFE`}
+    `type` can be one of {`Java`, `DLL`, `EXE`, `Python`, `LuaJIT`, `LFE`}
