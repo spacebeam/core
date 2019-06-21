@@ -1,7 +1,7 @@
-# starcraft-scif
-This repository prepares StarCraft: Brood War bots running wine inside a singularity linux container image.
+# starcraft-sif
+This repository prepares StarCraft: Brood War bots running inside a SIF ([Singularity](https://github.com/sylabs/singularity) Image Format) a single executable file based container image, auditable, secure, and easy to move using existing data mobility paradigms.
 
-It can download and launch win and nix bots that use BWAPI `4.1.2, 4.2.0, 4.4.0` to communicate with the game.
+It can download and launch Win32 C++ and Java bots or any Linux® bot with support for BWAPI `4.1.2, 4.2.0, 4.4.0`.
 
 ## Headless play
 
@@ -14,7 +14,7 @@ Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and 
 
 ### Add your own bot
 
-Place your bot to `--bot_dir` directory. Some of these are inspired by [SSCAIT rules](http://sscaitournament.com/index.php?action=rules).
+Place your bot to `--bots` directory. Some of these are inspired by [SSCAIT rules](http://sscaitournament.com/index.php?action=rules).
 
 Use this structure:
 
@@ -40,4 +40,4 @@ Use this structure:
 
     `race` can be one of {`Terran`, `Zerg`, `Protoss`, `Random`}
 
-    `type` can be one of {`Java`, `AI_MODULE`, `EXE`, `Python`, `LuaJIT`, `LFE`}
+    `type` can be one of {`Java`, `DLL`, `EXE`, `Python`, `LuaJIT`, `LFE`}
