@@ -14,7 +14,7 @@ Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and 
 
 ### Add your own bot
 
-Place your bot to `--bot_dir` directory. Some of these are inspired by [SSCAIT rules](http://sscaitournament.com/index.php?action=rules).
+Place your bot to `--bots` directory. Some of these are inspired by [SSCAIT rules](http://sscaitournament.com/index.php?action=rules).
 
 Use this structure:
 
