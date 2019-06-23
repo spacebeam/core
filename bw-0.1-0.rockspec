@@ -24,7 +24,9 @@ dependencies = {
 build = {
   type = 'builtin',
   modules = {
-    ['bw.version'] = "src/version.lua" 
+    ['bw.version'] = "src/version.lua",
+    ['bw.tools'] = "src/tools.lua",
+    ['bw.bots'] = "src/bots.lua"
   },
   install = {
     bin = {
