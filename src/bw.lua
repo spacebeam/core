@@ -34,6 +34,13 @@ local games = sc .. "games/"
 local bwta = sc .. "bwapi-data/BWTA"
 local bwta2 = sc .. "bwapi-data/BWTA2"
 local maps = sc .. "maps/"
+local errors = sc .. "Errors/"
+local bwapi_data = sc .. "bwapi-data/"
+local bot_data_save = sc .. "bwapi-data/save"
+local bot_data_read = sc .. "bwapi-data/read"
+local bot_data_write = sc .. "bwapi-data/write"
+local bot_data_ai = sc .. "bwapi-data/AI"
+local bot_data_logs = sc .. "bwapi-data/logs"
 -- Your system messages
 local messages = {
   'Can I take your order?',
