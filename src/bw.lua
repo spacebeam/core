@@ -5,6 +5,10 @@
 local argparse = require("argparse")
 local socket = require("socket")
 local uuid = require("uuid")
+
+-- BWAPI and TorchCraft use ini configuration files
+local ini = require(inifile)
+
 -- init random seed
 uuid.randomseed(socket.gettime()*10000)
 -- Session UUID
