@@ -41,6 +41,6 @@ Use this structure:
 
     `race` can be one of {`Terran`, `Zerg`, `Protoss`, `Random`}
 
-    `type` can be one of {`Java`, `DLL`, `EXE`, `Python`, `LuaJIT`, `LFE`}
+    `type` can be one of {`Java`, `DLL`, `EXE`, `Python`, `LuaJIT`}
     
     `bwapi` can be one of {`4.1.2`, `4.2.0`, `4.4.0`}
