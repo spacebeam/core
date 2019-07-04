@@ -1,5 +1,5 @@
 {
 	"name": "Blueberry",
 	"race": "Terran",
-	"botType": "Python",
+	"type": "Python",
 }

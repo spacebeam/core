@@ -1,5 +1,5 @@
 {
     "name": "Ophelia",
     "race": "Zerg",
-    "botType": "LuaJIT"
+    "type": "LuaJIT"
 }
