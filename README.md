@@ -34,10 +34,13 @@ Use this structure:
           "name": "Perran",
           "race": "Terran",
           "type": "Python",
+          "bwapi": "4.2.0",
         }
 
     `name` must match `[a-zA-Z0-9_][a-zA-Z0-9_. -]{0,40}`
 
     `race` can be one of {`Terran`, `Zerg`, `Protoss`, `Random`}
 
-    `type` can be one of {`Java`, `DLL`, `EXE`, `Python`, `LuaJIT`, `LFE`}
+    `type` can be one of {`Java`, `DLL`, `EXE`, `Python`, `LuaJIT`}
+    
+    `bwapi` can be one of {`4.1.2`, `4.2.0`, `4.4.0`}
