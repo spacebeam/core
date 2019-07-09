@@ -30,7 +30,7 @@ build = {
   },
   install = {
     bin = {
-      ['bw'] = "src/bw.lua"
+      ['bw'] = "src/main.lua"
     }
   }
 }

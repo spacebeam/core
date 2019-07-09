@@ -30,7 +30,7 @@ Use this structure:
 
 - **/bot.yml** - bot configuration. Minimal config is following:
 
-        name: Perran
+        name: Blueberry 
         race: Terran
         type: Python
         bwapi: 4.2.0
