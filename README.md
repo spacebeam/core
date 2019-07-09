@@ -28,14 +28,12 @@ Use this structure:
 
     Note that `bw` creates subdirectories in write folder, for each game it's own. The contents of the *write/GAME_xxx* folder will be copied to the *read* folder.
 
-- **/bot.json** - bot configuration. Minimal config is following:
+- **/bot.yml** - bot configuration. Minimal config is following:
 
-        {
-          "name": "Perran",
-          "race": "Terran",
-          "type": "Python",
-          "bwapi": "4.2.0",
-        }
+        name: Perran
+        race: Terran
+        type: Python
+        bwapi: 4.2.0
 
     `name` must match `[a-zA-Z0-9_][a-zA-Z0-9_. -]{0,40}`
 
