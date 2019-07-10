@@ -1,26 +1,25 @@
-{
-    "bots": ["Ophelia", "Blueberry"],
-    "maps": [
-        "Circuit Breaker", 
-        "Fighting Spirit", 
-        "Overwatch", 
-        "Eddy", 
-        "Neo Aztec", 
-        "Tau Cross"
-    ],
-    "games": "games.txt",
-    "results": "results.txt",
-    "port": 1337,
-    "type": "Melee",
-    "speed": "Fastest",
-    "tournament": {
-        "local_speed": 0,
-        "frame_skip": 256,
-        "frame_limit": 85714,
-        "timeouts": [
-            {"time": 55, "frame": 320},
-            {"time": 1000, "frame": 10},
-            {"time": 10000, "frame": 1}
-        ]
-    }
-}
+# The Computer League YML file 
+bots:
+    - Ophelia
+    - Blueberry
+maps:
+    - Circuit Breaker
+    - Fighting Spirit
+    - Overwatch
+    - Eddy
+    - Neo Aztec
+    - Tau Cross
+games: games.log
+results: results.log
+port: 1337
+type: Melee
+speed: Normal
+# tm.dll configuration
+tournament:
+    local_speed: 0
+    frame_skip: 256
+    frame_limit: 85714
+    timeouts:
+        - time: 55 frame: 320
+        - time: 1000 frame: 10
+        - time: 10000 frame: 1
