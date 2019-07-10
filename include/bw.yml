@@ -9,13 +9,16 @@ maps:
     - Eddy
     - Neo Aztec
     - Tau Cross
-games: games.txt
-results: results.txt
+starcraft: /opt/StarCraft
+host: 127.0.0.1
 port: 1337
 type: Melee
 speed: Normal
+games: games.txt
+results: results.txt
 # tm.dll configuration
 tournament:
+    module: bwapi-data/tm.dll
     local_speed: 0
     frame_skip: 256
     frame_limit: 85714
