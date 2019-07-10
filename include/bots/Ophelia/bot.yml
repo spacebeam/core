@@ -1,0 +1,4 @@
+name: Ophelia
+race: Zerg
+type: LuaJIT
+bwapi: 4.1.2
