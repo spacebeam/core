@@ -9,8 +9,8 @@ maps:
     - Eddy
     - Neo Aztec
     - Tau Cross
-games: games.log
-results: results.log
+games: games.txt
+results: results.txt
 port: 1337
 type: Melee
 speed: Normal
@@ -20,6 +20,12 @@ tournament:
     frame_skip: 256
     frame_limit: 85714
     timeouts:
-        - time: 55 frame: 320
-        - time: 1000 frame: 10
-        - time: 10000 frame: 1
+        -
+            time: 55
+            frame: 320
+        - 
+            time: 1000
+            frame: 10
+        -
+            time: 10000
+            frame: 1
