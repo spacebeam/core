@@ -11,13 +11,6 @@ All data send and received pass through ZMQ sockets, so no special network confi
 
 This repository includes several requirements such as BWAPI.dll files which will automatically be configured and run.
 
-## Headless play
-
-Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
-```
-    $ pkg -u starcraft run -x "Ophelia Blueberry"
-```
-
 ## Serverless
 When running the software, the host machine acts as a central repository where all bot files (including file I/O) data, cumulative results, and replay files are stored.
 
@@ -41,43 +34,17 @@ When a game finishes the results are sent back along with file I/O data and repl
 
 This process repeats until the competition has finished.
 
-## Instructions
-Running a competition using this software requires the following prerequisites:
+## Getting started
+Your Debian system need the latest release of Erlang, LuaJIT (with luarocks) and Singularity installed.
 
-- Debian stable
-- LuaJIT with luarocks
-- Erlang 21 (or higher)
-- Singularity 2.6 (or higher)
+### Installation
+Then run this command:
 
-## Development
+`luarocks install package`
 
-### Add your own bot
+## Headless play
 
-Place your bot to `--bots` directory. Some of these are inspired by [SSCAIT rules](http://sscaitournament.com/index.php?action=rules).
-
-Use this structure:
-
-- **/AI/** - put your bot binaries here.
-
-- **/read/** - folder where you can put your config files, initial opponent modelling etc.
-
-  It's contents may be overwritten. After running games contents of the write folder can be copied here, see below.
-
-- **/write/** - folder where bot can write.
-
-    Note that `bw` creates subdirectories in write folder, for each game it's own. The contents of the *write/GAME_xxx* folder will be copied to the *read* folder.
-
-- **/bot.yml** - bot configuration. Minimal config is following:
-
-        name: Blueberry 
-        race: Terran
-        type: Python
-        bwapi: 4.2.0
-
-    `name` must match `[a-zA-Z0-9_][a-zA-Z0-9_. -]{0,40}`
-
-    `race` can be one of `Terran`, `Zerg`, `Protoss`, `Random`
-
-    `type` can be one of `Java`, `DLL`, `EXE`, `Python`, `LuaJIT`
-    
-    `bwapi` can be one of `4.1.2`, `4.2.0`, `4.4.0`
+Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
+```
+    $ pkg -u starcraft run -x "Ophelia Blueberry"
+```
