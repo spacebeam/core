@@ -36,6 +36,15 @@ Each client is handled by a separete processes in the server, and if the client 
 
 When a game finishes the results are sent back along with file I/O data and replay files, which are stored on the server. This process repeats until the competition has finished.
 
+## Instructions
+*Prerequisites*
+Running a competition using this software requires the following prerequisites:
+
+- Debian 10 (or higher)
+- LuaJIT with luarocks
+- Erlang 21 (or higher)
+
+
 ## Headless play
 
 Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
