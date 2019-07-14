@@ -53,7 +53,7 @@ $ pkg -u starcraft run -x "Ophelia Blueberry"
 ```
 
 ## Settings
-All computer league configuration is done in /etc/bw.yml. This file must parse as valid YAML or the competition will not start.
+All configuration is done in /etc/bw.yml. This file must parse as valid YAML or the competition will not start.
 
 <table>
 <tr><th>Name</th><th>Value</th></tr>
