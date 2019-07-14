@@ -16,20 +16,20 @@ When running the software, the host machine acts as a central repository where a
 
 The server program has an independent process which monitors for new container connections and detects disconnections, maintaining a current list of instances acting as clients which can have one of the following status:
 
-- READY, free and ready to start,
-- STARTING, the match has not yet begun,
-- RUNNING, client is running a game,
-- SENDING, results and data back to the server.
+- **READY**, free and ready to start,
+- **STARTING**, the match has not yet begun,
+- **RUNNING**, client is running a game,
+- **SENDING**, results and data back to the server.
 
 Normally a new game can be started only if:
 
-1. two or more clients are READY, and 
-2. no clients are STARTING.
+1. two or more clients are **READY**, and 
+2. no clients are **STARTING**.
 
-Once these two conditions are met, the server sends the required bot files, map, BWAPI.dll and TM.dll to the clients, specifying one as the host and another as the away machine. Those client's status are then set to STARTING.
+Once these two conditions are met, the server sends the required bot files, map, BWAPI.dll and TM.dll to the clients, specifying one as the host and another as the away machine. Those client's status are then set to **STARTING**.
 
 ### Clients
-Each client is handled by separete processes in the server, and if the client is STARTING, RUNNING, or SENDING, it sends periodic status updates back for remote monitoring.
+Each client is handled by separete processes in the server, and if the client is **STARTING**, **RUNNING**, or **SENDING**, it sends periodic status updates back for remote monitoring.
 
 When a game finishes the results are sent back along with file I/O data and replay files, which are stored on the server. 
 
