@@ -11,22 +11,8 @@ All data send and received pass through ZMQ sockets, so no special network confi
 
 This repository includes several requirements such as BWAPI.dll files which will automatically be configured and run.
 
-## Getting started
-Your Debian system need the latest release of Erlang, LuaJIT (with luarocks) and Singularity installed.
 
-### Installation
-Then run this command:
-
-`luarocks install package`
-
-## Headless play
-
-Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
-```
-$ pkg -u starcraft run -x "Ophelia Blueberry"
-```
-
-## Serverless
+### Server
 When running the software, the host machine acts as a central repository where all bot files (including file I/O) data, cumulative results, and replay files are stored.
 
 The server program has an independent process which monitors for new container connections and detects disconnections, maintaining a current list of instances acting as clients which can have one of the following status:
@@ -43,8 +29,27 @@ Normally a new game can be started only if:
 
 Once these two conditions are met, the server sends the required bot files, map, BWAPI.dll and TM.dll to the clients, specifying one as the host and another as the away machine. Those client's status are then set to STARTING.
 
+### Client
 Each client is handled by separete processes in the server, and if the client is STARTING, RUNNING, or SENDING, it sends periodic status updates back for remote monitoring.
 
 When a game finishes the results are sent back along with file I/O data and replay files, which are stored on the server. 
 
 This process repeats until the competition has finished.
+
+## Getting started
+Your system need the latest release of Erlang, LuaJIT (with luarocks) and Singularity installed.
+
+### Installation
+Then run this command:
+
+`luarocks install package`
+
+`pkg -u starcraft install`
+
+## Headless play
+
+Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
+```
+$ pkg -u starcraft run -x "Ophelia Blueberry"
+```
+
