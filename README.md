@@ -13,13 +13,7 @@ All data send and received passed through ZMQ sockets, so no special network con
 
 This repository includes several required files for setup such as BWAPI.dll files which will automatically be configured and run.
 
-## Headless play
-
-Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
-```
-    $ pkg -u starcraft run -x "Ophelia Blueberry"
-```
-## Server
+## Serverless
 When runnin the software, the host machine acts as a server for the competition.
 
 The server is a central repository where all bot files (including file I/O) data, cumulative results, and replay files are stored.
@@ -36,6 +30,13 @@ Normally a new game can be started only if:
 1. two or more clients are READY, and 
 2. no clients are STARTING.
 
+
+## Headless play
+
+Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
+```
+    $ pkg -u starcraft run -x "Ophelia Blueberry"
+```
 
 ## Development
 
