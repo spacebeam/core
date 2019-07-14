@@ -11,6 +11,13 @@ All data send and received pass through ZMQ sockets, so no special network confi
 
 This repository includes several requirements such as BWAPI.dll files which will automatically be configured and run.
 
+## Headless play
+
+Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
+```
+    $ pkg -u starcraft run -x "Ophelia Blueberry"
+```
+
 ## Serverless
 When runnin the software, the host machine acts as a server for the competition.
 
@@ -40,17 +47,10 @@ When a game finishes the results are sent back along with file I/O data and repl
 *Prerequisites*
 Running a competition using this software requires the following prerequisites:
 
-- Debian 10 (or higher)
+- Debian stable
 - LuaJIT with luarocks
 - Erlang 21 (or higher)
-
-
-## Headless play
-
-Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
-```
-    $ pkg -u starcraft run -x "Ophelia Blueberry"
-```
+- Singularity 2.6 (or higher)
 
 ## Development
 
