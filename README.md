@@ -1,15 +1,13 @@
 # starcraft-sif
-This repository prepares StarCraft: Brood War bots running inside a SIF ([Singularity](https://github.com/sylabs/singularity) Image Format) a single executable file based container image, auditable, secure, and easy to move using existing data mobility paradigms.
+This software is a tool for running StarCraft AI competitions from Linux running bots inside a SIF ([Singularity](https://github.com/sylabs/singularity) Image Format) a single executable file based container image, auditable, secure, and easy to move using existing data mobility paradigms.
 
 It can download and launch Win32 C++ and Java bots or any Linux® bot with support for BWAPI `4.1.2, 4.2.0, 4.4.0`.
 
-This software is a tool for running StarCraft AI leagues from Linux.
+It uses a server/client architecture with the host machine acting as a server and any number of other container instances acting as clients.
 
-It uses a server/client architecture with one machine acting as a blackboard server and any number of other singularity linux containers acting as clients.
+The league manager is written in a mixture of Lua, Erlang and Python and can be run on Debian 10 or higher, either on a physical or virtual machine.
 
-The league manager is written in a mixture of Lua, Erlang and Python and can be ru on Debian 10 or higher, either on a physical machine or a virtual machine.
-
-All data send and received passed through ZMQ sockets, so no special network configuration is required to run the software.
+All data send and received pass through ZMQ sockets, so no special network configuration is required to run the software.
 
 This repository includes several required files for setup such as BWAPI.dll files which will automatically be configured and run.
 
