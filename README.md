@@ -19,7 +19,7 @@ Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and 
 ```
 
 ## Serverless
-When running the software, the host machine acts as a server for the competition. The server is a central repository where all bot files (including file I/O) data, cumulative results, and replay files are stored.
+When running the software, the host machine acts as a central repository where all bot files (including file I/O) data, cumulative results, and replay files are stored.
 
 The server program has an independent process which monitors for new container connections and detects disconnections, maintaining a current list of instances acting as clients which can have one of the following status:
 
