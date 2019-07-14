@@ -11,6 +11,21 @@ All data send and received pass through ZMQ sockets, so no special network confi
 
 This repository includes several requirements such as BWAPI.dll files which will automatically be configured and run.
 
+## Getting started
+Your Debian system need the latest release of Erlang, LuaJIT (with luarocks) and Singularity installed.
+
+### Installation
+Then run this command:
+
+`luarocks install package`
+
+## Headless play
+
+Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
+```
+$ pkg -u starcraft run -x "Ophelia Blueberry"
+```
+
 ## Serverless
 When running the software, the host machine acts as a central repository where all bot files (including file I/O) data, cumulative results, and replay files are stored.
 
@@ -33,18 +48,3 @@ Each client is handled by a separete processes in the server, and if the client 
 When a game finishes the results are sent back along with file I/O data and replay files, which are stored on the server. 
 
 This process repeats until the competition has finished.
-
-## Getting started
-Your Debian system need the latest release of Erlang, LuaJIT (with luarocks) and Singularity installed.
-
-### Installation
-Then run this command:
-
-`luarocks install package`
-
-## Headless play
-
-Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
-```
-$ pkg -u starcraft run -x "Ophelia Blueberry"
-```
