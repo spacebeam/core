@@ -3,13 +3,13 @@ This software is a tool for running StarCraft AI competitions from Linux running
 
 It can download and launch Win32 C++ and Java bots or any Linux® bot with support for BWAPI `4.1.2, 4.2.0, 4.4.0`.
 
-It uses a server/client architecture with the host machine acting as a server and any number of other container instances acting as clients.
+It uses a server/client architecture with the host acting as a server and any number of other containers acting as clients.
 
-The league manager is written in a mixture of Lua, Erlang and Python and can be run on Debian 10 or higher, either on a physical or virtual machine.
+The system is written in a mixture of Lua, Erlang and Python and can be run on Debian 10 or higher, either on a physical or virtual machine.
 
 All data send and received pass through ZMQ sockets, so no special network configuration is required to run the software.
 
-This repository includes several required files for setup such as BWAPI.dll files which will automatically be configured and run.
+This repository includes several requirements for setup such as BWAPI.dll files which will automatically be configured and run.
 
 ## Serverless
 When runnin the software, the host machine acts as a server for the competition.
