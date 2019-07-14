@@ -19,25 +19,23 @@ Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and 
 ```
 
 ## Serverless
-When runnin the software, the host machine acts as a server for the competition.
+When running the software, the host machine acts as a server for the competition. The server is a central repository where all bot files (including file I/O) data, cumulative results, and replay files are stored.
 
-The server is a central repository where all bot files (including file I/O) data, cumulative results, and replay files are stored.
+The server program has an independent process which monitors for new container connections and detects disconnections, maintaining a current list of instances acting as clients which can have one of the following status:
 
-The server program has an independent process which monitors for new container connections and detects disconnections, maintaining a current list of instances acting as clients which can have one of the following statuses:
-
-- READY, free and ready to start
-- STARTING, the match has not yet begun
-- RUNNING, client is running a game
-- SENDING, results and data back to the server
+- READY, free and ready to start,
+- STARTING, the match has not yet begun,
+- RUNNING, client is running a game,
+- SENDING, results and data back to the server.
 
 Normally a new game can be started only if:
 
 1. two or more clients are READY, and 
 2. no clients are STARTING.
 
-Once these two conditions are met, the server sends the required bot files, map, BWAPI, and TM.dll to the client machines, specifying one client as the host and one as the away machine.
+Once these two conditions are met, the server sends the required bot files, map, BWAPI.dll and TM.dll to the clients, specifying one as the host and another as the away machine.
 
-Those client's status are then set to *STARTING*. 
+Those client's status are then set to **STARTING**. 
 
 Each client is handled by a separete processes in the server, and if the client is STARTING, RUNNING, or SENDING, it sends periodic status updates back for remote monitoring.
 
