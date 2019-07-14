@@ -7,7 +7,7 @@ It uses a server/client architecture with the host acting as a server and any nu
 
 The system is written in a mixture of Lua, Erlang and Python and can be run on Debian 10 or higher, either on a physical machine or a virtual machine.
 
-All data send and received pass through [ZMQ](http://zeromq.org/) sockets, so no special network configuration is required to run the software.
+All data send and received pass through ZMQ sockets, so no special network configuration is required to run the software.
 
 This repository includes several requirements such as BWAPI.dll files which will automatically be configured and run.
 
