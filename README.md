@@ -46,5 +46,5 @@ Then run this command:
 
 Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
 ```
-    $ pkg -u starcraft run -x "Ophelia Blueberry"
+$ pkg -u starcraft run -x "Ophelia Blueberry"
 ```
