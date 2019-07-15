@@ -253,45 +253,39 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
 
 Example server_settings.json:
 
-```json
-{
-    "bots": [
-        {"BotName": "UAlbertaBot", "Race": "Random", "BotType": "proxy", "BWAPIVersion": "BWAPI_420"},
-        {"BotName": "ExampleBot", "Race": "Protoss", "BotType": "dll", "BWAPIVersion": "BWAPI_412", "ClientRequirements": [{"Property": "GPU"}]}
-    ],
-    
-    "maps": 
-    [
-        "maps/aiide/(2)Benzene.scx",
-        "maps/aiide/(2)Destination.scx"
-    ],
-    
-    "gamesListFile"           : "games.txt",
-    "resultsFile"             : "results.txt",
-    "detailedResults"         : false,
-    "serverPort"              : 1337,
-    "clearResults"            : "ask",
-    "startGamesSimultaneously": false,
-    "tournamentType"          : "AllVsAll",
-    "lobbyGameSpeed"          : "Normal",
-    "enableBotFileIO"         : true,
-    "ladderMode"              : false,
-    "excludeFromResults"      : ["ExampleBot"],
-    
-    "tournamentModuleSettings":
-    {
-        "localSpeed"    : 0,
-        "frameSkip"     : 256,
-        "gameFrameLimit": 85714,
-        "timeoutLimits" :
-        [
-            {"timeInMS" : 55,    "frameCount": 320},
-            {"timeInMS" : 1000,  "frameCount": 10},
-            {"timeInMS" : 10000, "frameCount": 1}
-        ],
-        "drawBotNames"      : true,
-        "drawTournamentInfo": true,
-        "drawUnitInfo"      : true    
-    }
-}
+```yaml
+# The Computer League YAML file 
+bots:
+    - Ophelia
+    - Blueberry
+maps:
+    - Circuit Breaker
+    - Fighting Spirit
+    - Overwatch
+    - Eddy
+    - Neo Aztec
+    - Tau Cross
+starcraft: /opt/StarCraft
+host: 127.0.0.1
+port: 1337
+type: Melee
+speed: Normal
+games: games.txt
+results: results.txt
+# tm.dll configuration
+tournament:
+    module: bwapi-data/tm.dll
+    local_speed: 0
+    frame_skip: 256
+    frame_limit: 85714
+    timeouts:
+        -
+            time: 55
+            frame: 320
+        - 
+            time: 1000
+            frame: 10
+        -
+            time: 10000
+            frame: 1
 ```
