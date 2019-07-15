@@ -12,7 +12,7 @@ All data send and received pass through ZMQ sockets, so no special network confi
 This repository includes several requirements such as BWAPI.dll files which will automatically be configured and run.
 
 ### Serverless
-When running the software, the host machine acts as a central repository where all bot files (including file I/O) data, cumulative results, and replay files are stored.
+When running the software, the host machine acts as a central repository where all bot files (including file I/O) data, cumulative results, and replays are stored.
 
 The server program has an independent process which monitors for new container connections and detects disconnections, maintaining a current list of instances acting as clients which can have one of the following status:
 
@@ -29,7 +29,7 @@ Normally a new game can be started only if:
 Once these two conditions are met, the server sends the required bot files, map, BWAPI.dll and TM.dll to the clients, specifying one as the host and another as the away machine. Those client's status are then set to **STARTING**.
 
 ### Clients
-Each client is handled by separete processes in the server, and if the client is **STARTING**, **RUNNING**, or **SENDING**, it sends periodic status updates back for remote monitoring.
+Each client is handled by independent processes in the server, and if the client is **STARTING**, **RUNNING**, or **SENDING**, it sends periodic status updates back for remote monitoring.
 
 When a game finishes the results are sent back along with file I/O data and replay files, which are stored on the server. 
 
@@ -251,47 +251,41 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
 </tr>
 </table>
 
-Example server_settings.json:
+Example /etc/bw.yml:
 
-```json
-{
-    "bots": [
-        {"BotName": "UAlbertaBot", "Race": "Random", "BotType": "proxy", "BWAPIVersion": "BWAPI_420"},
-        {"BotName": "ExampleBot", "Race": "Protoss", "BotType": "dll", "BWAPIVersion": "BWAPI_412", "ClientRequirements": [{"Property": "GPU"}]}
-    ],
-    
-    "maps": 
-    [
-        "maps/aiide/(2)Benzene.scx",
-        "maps/aiide/(2)Destination.scx"
-    ],
-    
-    "gamesListFile"           : "games.txt",
-    "resultsFile"             : "results.txt",
-    "detailedResults"         : false,
-    "serverPort"              : 1337,
-    "clearResults"            : "ask",
-    "startGamesSimultaneously": false,
-    "tournamentType"          : "AllVsAll",
-    "lobbyGameSpeed"          : "Normal",
-    "enableBotFileIO"         : true,
-    "ladderMode"              : false,
-    "excludeFromResults"      : ["ExampleBot"],
-    
-    "tournamentModuleSettings":
-    {
-        "localSpeed"    : 0,
-        "frameSkip"     : 256,
-        "gameFrameLimit": 85714,
-        "timeoutLimits" :
-        [
-            {"timeInMS" : 55,    "frameCount": 320},
-            {"timeInMS" : 1000,  "frameCount": 10},
-            {"timeInMS" : 10000, "frameCount": 1}
-        ],
-        "drawBotNames"      : true,
-        "drawTournamentInfo": true,
-        "drawUnitInfo"      : true    
-    }
-}
+```yaml
+# The Computer League YAML file 
+bots:
+    - Ophelia
+    - Blueberry
+maps:
+    - Circuit Breaker
+    - Fighting Spirit
+    - Overwatch
+    - Eddy
+    - Neo Aztec
+    - Tau Cross
+starcraft: /opt/StarCraft
+host: 127.0.0.1
+port: 1337
+type: Melee
+speed: Normal
+games: games.txt
+results: results.txt
+# tm.dll configuration
+tournament:
+    module: bwapi-data/tm.dll
+    local_speed: 0
+    frame_skip: 256
+    frame_limit: 85714
+    timeouts:
+        -
+            time: 55
+            frame: 320
+        - 
+            time: 1000
+            frame: 10
+        -
+            time: 10000
+            frame: 1
 ```
