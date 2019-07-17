@@ -60,22 +60,15 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
 <tr>
     <td>bots</td>
     <td>
-        <b>Type:</b> Array of json objects<br><br>
+        <b>Type:</b> Array of strings<br><br>
         These are the bots that will play in the tournament.
-        Each bot object must contain the following name/value pairs:
+        Each bot directory must contain a valid bot.yml file with the following name/value pairs:
         <ul>
-        <li><b>BotName:</b> String - the name of the bot, matching the bot folder name</li>
-        <li><b>Race:</b> "Random" | "Terran" | "Zerg" | "Protoss"</li>
-        <li><b>BotType:</b> "dll" | "proxy"</li>
-        <li><b>BWAPIVersion:</b> "BWAPI_374" | "BWAPI_401B" | "BWAPI_412" | "BWAPI_420" | "BWAPI_440"</li>
-        <li><b>ClientRequirements</b> (OPTIONAL): array of strings with required properties</li>
-            <ul>
-                <li>Example: ["GPU", "Extra RAM", "!64-bit Java"]</li>
-                <li>If the first character of a property is "!", then that bot can only use a client that doesn't have that property. In the example above, the bot could play only on a client with both the "GPU" and "Extra RAM" properties and not the "64-bit Java" property.</li>
-                <li>Bot requirements must match a client in the tournament (see Client Settings) or the tournament will not be able to finish</li>
-            </ul>
+        <li><b>name:</b> String - the name of the bot, matching the bot folder name</li>
+        <li><b>race:</b> "Random" | "Terran" | "Zerg" | "Protoss"</li>
+        <li><b>type:</b> "dll" | "proxy"</li>
+        <li><b>bwapi:</b> "4.1.2" | "4.2.0" | "4.4.0"</li>
         </ul>
-         Example: {"BotName": "UAlbertaBot", "Race": "Random", "BotType": "proxy", "BWAPIVersion": "BWAPI_420"}
     </td>
 </tr>
 <tr>
