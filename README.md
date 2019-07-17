@@ -86,17 +86,17 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
          Example: "maps/aiide/(2)Benzene.scx"
     </td>
 </tr>
+
 <tr>
-    <td>detailedResults</td>
+    <td>starcraft</td>
     <td>
-        <b>Type:</b> Boolean<br><br>
-        Setting to true auto-generates detailed results whenever a game result is received.
-        Generating detailed results gets slow for very large tournaments, so default is false.
-        You can manually generate the results from the Actions menu in the server, which is recommended.
+        <b>Type:</b> String<br><br>
+        Location of StarCraft 1.16.1
     </td>
 </tr>
+
 <tr>
-    <td>serverPort</td>
+    <td>port</td>
     <td>
         <b>Type:</b> Number<br><br>
         Port to listen for clients on. This should match the port number in the client's <b>ServerAddress</b> setting.
