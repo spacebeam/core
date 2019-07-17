@@ -65,9 +65,9 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
         Each bot directory must contain a valid bot.yml file with the following name/value pairs:
         <ul>
         <li><b>name:</b> String name of the bot, matching the bot folder name</li>
-        <li><b>race:</b> `Random`, `Terran`, `Zerg`, `Protoss`</li>
-        <li><b>type:</b> `Java`, `DLL`, `EXE`, `Python`, `LuaJIT`</li>
-        <li><b>bwapi:</b> `4.1.2`, `4.2.0`, `4.4.0`</li>
+        <li><b>race:</b> Terran, Zerg, Protoss, Random</li>
+        <li><b>type:</b> Java, DLL, EXE, Python, LuaJIT</li>
+        <li><b>bwapi:</b> 4.1.2, 4.2.0, 4.4.0</li>
         </ul>
     </td>
 </tr>
@@ -75,8 +75,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     <td>maps</td>
     <td>
         <b>Type:</b> Array of strings<br><br>
-        Each round of the tournament will be played on these maps in the order they are listed in. The value should be the path to the map relative to the Starcraft directory; no spaces
-         Example: "maps/aiide/(2)Benzene.scx"
+        Each round will be played on these maps at random order. The value should be the name of the map relative to the maps directory.
     </td>
 </tr>
 
@@ -84,15 +83,21 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     <td>starcraft</td>
     <td>
         <b>Type:</b> String<br><br>
-        Location of StarCraft 1.16.1
+        Location of StarCraft 1.16.1.
     </td>
 </tr>
-
+<tr>
+    <td>host</td>
+    <td>
+        <b>Host:</b> String<br><br>
+        Host server address.
+    </td>
+</tr>
 <tr>
     <td>port</td>
     <td>
         <b>Type:</b> Number<br><br>
-        Port to listen for clients on. This should match the port number in the client's <b>ServerAddress</b> setting.
+        Port to listen for clients on. 
     </td>
 </tr>
 <tr>
