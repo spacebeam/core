@@ -87,21 +87,6 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     </td>
 </tr>
 <tr>
-    <td>gamesListFile</td>
-    <td>
-        <b>Type:</b> String<br><br>
-        Location of file with list of games to be played, relative to server.jar; No spaces.
-        The user will be prompted to generate a new games list if the file does not already exist (i.e. if this is a new tournament).
-    </td>
-</tr>
-<tr>
-    <td>resultsFile</td>
-    <td>
-        <b>Type:</b> String<br><br>
-        Location of tournament results file, relative to server.jar. No spaces. Raw results data returned from clients is stored in this file (one line for each client). Nice results are output by the server in the html/ directory.
-    </td>
-</tr>
-<tr>
     <td>detailedResults</td>
     <td>
         <b>Type:</b> Boolean<br><br>
@@ -118,7 +103,22 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     </td>
 </tr>
 <tr>
-    <td>clearResults</td>
+    <td>resultsFile</td>
+    <td>
+        <b>Type:</b> String<br><br>
+        Location of tournament results file, relative to server.jar. No spaces. Raw results data returned from clients is stored in this file (one line for each client). Nice results are output by the server in the html/ directory.
+    </td>
+</tr>
+<tr>
+    <td>gamesListFile</td>
+    <td>
+        <b>Type:</b> String<br><br>
+        Location of file with list of games to be played, relative to server.jar; No spaces.
+        The user will be prompted to generate a new games list if the file does not already exist (i.e. if this is a new tournament).
+    </td>
+</tr>
+<tr>
+    <td>results</td>
     <td>
         <b>Type:</b> String<br><br>
         Clear existing results on server start? Allowed values: "yes" | "no" | "ask"<br>
@@ -126,17 +126,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     </td>
 </tr>
 <tr>
-    <td>startGamesSimultaneously</td>
-    <td>
-        <b>Type:</b> Boolean<br><br>
-        If set to <b>true</b> new games will be started while other games are still in the starting process (i.e. other Starcraft instances are in the lobby).
-        If set to <b>false</b> only one game can be <b>STARTING</b> at a time.<br><br>
-        <b>WARNING:</b> This is only usable if all bots are using BWAPI version 4.2.0 or higher.
-        If using older versions of BWAPI, bots will join any game in the lobby, leading to games with more than 2 players, and generally games that do not match.
-    </td>
-</tr>
-<tr>
-    <td>tournamentType</td>
+    <td>type</td>
     <td>
         <b>Type:</b> String<br><br>
         Allowed values: "AllVsAll" | "1VsAll"<br>
@@ -148,7 +138,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     </td>
 </tr>
 <tr>
-    <td>lobbyGameSpeed</td>
+    <td>speed</td>
     <td>
         <b>Type:</b> String<br><br>
         Allowed values: "Slowest" | "Slower" | "Slow" | "Normal" | "Fast" | "Faster" | "Fastest"<br>
