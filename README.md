@@ -157,33 +157,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     </td>
 </tr>
 <tr>
-    <td>enableBotFileIO</td>
-    <td>
-        <b>Type:</b> Boolean<br><br>
-        If set to <b>true</b> the server will wait for each round to complete before sarting the next round.
-        Every time a round finishes the contents of 'BotName/write' will be copied to 'BotName/read'.
-        Bots that implement learning from previous rounds will have access to the contents of the read directory in 'bwapi-data/read' on the client machine.
-        If set to <b>false</b> the server will ignore round numbers when scheduling games, and never copy from 'write' to 'read'.
-    </td>
-</tr>
-<tr>
-    <td>ladderMode</td>
-    <td>
-        <b>Type:</b> Boolean<br><br>
-        If set to <b>true</b> enables some alternate functionality designed to work with a persistant online ladder server in development by the authors of this project. Should not be used otherwise.
-    </td>
-</tr>
-<tr>
-    <td>excludeFromResults</td>
-    <td>
-        <b>Type:</b> Array of strings<br><br>
-        Bots listed in this array will be excluded from the results summary and detailed results output, but games that include them will still be played.
-        This feature is useful if you need to disqualify a bot from a tournament, or want to see the overall effects of a bot on the results.
-        The values in this array should match bot names given in the array of competing bots.
-    </td>
-</tr>
-<tr>
-    <td>tournamentModuleSettings</td>
+    <td>tournament<br>.module</td>
     <td>
         <b>Type:</b> Object<br><br>
         Tournament Module settings control the tournament module DLL which is injected into each Starcraft instance with BWAPI.
@@ -191,7 +165,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     </td>
 </tr>
 <tr>
-    <td>tournamentModuleSettings<br>.localSpeed</td>
+    <td>tournament<br>.local_speed</td>
     <td>
         <b>Type:</b> Number<br><br>
         BWAPI Local Speed; Calls BWAPI::Broodwar->setLocalSpeed(SpeedValue).
@@ -199,7 +173,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     </td>
 </tr>
 <tr>
-    <td>tournamentModuleSettings<br>.frameSkip</td>
+    <td>tournament<br>.frame_skip</td>
     <td>
         <b>Type:</b> Number<br><br>
         BWAPI Frame Skip; Calls BWAPI::Broodwar->setFrameSkip(SkipValue)<br>
@@ -207,7 +181,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     </td>
 </tr>
 <tr>
-    <td>tournamentModuleSettings<br>.gameFrameLimit</td>
+    <td>tournament<br>.frame_limit</td>
     <td>
         <b>Type:</b> Number<br><br>
         Game Frame Time Limit; Game stops when BWAPI::Broodwar->getFrameCount() > FrameLimit<br>
@@ -216,37 +190,16 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     </td>
 </tr>
 <tr>
-    <td>tournamentModuleSettings<br>.timeoutLimits</td>
+    <td>tournament<br>.timeouts</td>
     <td>
         <b>Type:</b> Array of json objects<br><br>
         Each timeoutLimit object must contain the following name/value pairs:
         <ul>
-            <li><b>timeInMS:</b> Number</li>
-            <li><b>frameCount:</b> Number</li>
+            <li><b>time:</b> Number</li>
+            <li><b>frame:</b> Number</li>
         </ul>
         A bot loses a game if it takes <b>timeinMS</b> or more time to advance a single frame <b>frameCount</b> times.
         Timeout limits of more than 60,000 ms will not have an effect since timeouts of more than a minute are counted as crashes.
-    </td>
-</tr>
-<tr>
-    <td>tournamentModuleSettings<br>.drawBotNames</td>
-    <td>
-        <b>Type:</b> Boolean<br><br>
-        Set to <b>true</b> to draw bot names on the game screen.
-    </td>
-</tr>
-<tr>
-    <td>tournamentModuleSettings<br>.drawTournamentInfo</td>
-    <td>
-        <b>Type:</b> Boolean<br><br>
-        Set to <b>true</b> to draw tournament information on the game screen.
-    </td>
-</tr>
-<tr>
-    <td>tournamentModuleSettings<br>.drawUnitInfo</td>
-    <td>
-        <b>Type:</b> Boolean<br><br>
-        Set to <b>true</b> to draw unit information on the game screen.
     </td>
 </tr>
 </table>
