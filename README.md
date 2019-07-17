@@ -61,12 +61,12 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     <td>bots</td>
     <td>
         <b>Type:</b> Array of strings<br><br>
-        These are the bots that will play in the tournament.
+        These are the bots that will play in the competition.
         Each bot directory must contain a valid bot.yml file with the following name/value pairs:
         <ul>
-        <li><b>name:</b> String - the name of the bot, matching the bot folder name</li>
+        <li><b>name:</b> String name of the bot, matching the bot folder name</li>
         <li><b>race:</b> "Random" | "Terran" | "Zerg" | "Protoss"</li>
-        <li><b>type:</b> "dll" | "proxy"</li>
+        <li><b>type:</b> "Java"| "DLL" | "EXE" | "Python" | "LuaJIT"</li>
         <li><b>bwapi:</b> "4.1.2" | "4.2.0" | "4.4.0"</li>
         </ul>
     </td>
