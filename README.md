@@ -89,7 +89,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
 <tr>
     <td>host</td>
     <td>
-        <b>Host:</b> String<br><br>
+        <b>Type:</b> String<br><br>
         Host server address.
     </td>
 </tr>
@@ -101,14 +101,16 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     </td>
 </tr>
 <tr>
-    <td>resultsFile</td>
+    <td>speed</td>
     <td>
         <b>Type:</b> String<br><br>
-        Location of tournament results file, relative to server.jar. No spaces. Raw results data returned from clients is stored in this file (one line for each client). Nice results are output by the server in the html/ directory.
+        Allowed values: "Slowest" | "Slower" | "Slow" | "Normal" | "Fast" | "Faster" | "Fastest"<br>
+        This setting changes registry entries on the client machines so that the game speed slider in the game creation lobby is set appropriately.
+        The actual game speed will be overridden by the tournamentModuleSettings.localSpeed setting, but the slider affects the number of latency frames in the game (the number of frames between a command and its execution).
     </td>
 </tr>
 <tr>
-    <td>gamesListFile</td>
+    <td>games</td>
     <td>
         <b>Type:</b> String<br><br>
         Location of file with list of games to be played, relative to server.jar; No spaces.
@@ -121,27 +123,6 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
         <b>Type:</b> String<br><br>
         Clear existing results on server start? Allowed values: "yes" | "no" | "ask"<br>
         If "yes" then a new tournament is always started when the server is started. If "no" then an existing tournament will be resumed if possible.
-    </td>
-</tr>
-<tr>
-    <td>type</td>
-    <td>
-        <b>Type:</b> String<br><br>
-        Allowed values: "AllVsAll" | "1VsAll"<br>
-        <ul>
-            <li>AllVsAll - Standard round robin tournament</li>
-            <li>1VsAll - First bot in <b>bots</b> list will play all the others.
-             Useful for testing changes to your bot.</li>
-        </ul>
-    </td>
-</tr>
-<tr>
-    <td>speed</td>
-    <td>
-        <b>Type:</b> String<br><br>
-        Allowed values: "Slowest" | "Slower" | "Slow" | "Normal" | "Fast" | "Faster" | "Fastest"<br>
-        This setting changes registry entries on the client machines so that the game speed slider in the game creation lobby is set appropriately.
-        The actual game speed will be overridden by the tournamentModuleSettings.localSpeed setting, but the slider affects the number of latency frames in the game (the number of frames between a command and its execution).
     </td>
 </tr>
 <tr>
@@ -209,7 +190,6 @@ maps:
 starcraft: /opt/StarCraft
 host: 127.0.0.1
 port: 1337
-type: Melee
 speed: Normal
 games: games.txt
 results: results.txt
