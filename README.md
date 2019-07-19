@@ -104,9 +104,9 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     <td>speed</td>
     <td>
         <b>Type:</b> String<br><br>
-        Allowed values: "Slowest" | "Slower" | "Slow" | "Normal" | "Fast" | "Faster" | "Fastest"<br>
-        This setting changes registry entries on the client machines so that the game speed slider in the game creation lobby is set appropriately.
-        The actual game speed will be overridden by the tournamentModuleSettings.localSpeed setting, but the slider affects the number of latency frames in the game (the number of frames between a command and its execution).
+        Allowed values: Slowest, Slower, Slow, Normal, Fast, Faster, Fastest<br>
+        This setting changes registry entries on the game speed slider in the game creation lobby.
+        The actual game speed will be overridden by the tournament.local_speed setting, but the slider affects the number of latency frames in the game (the number of frames between a command and its execution).
     </td>
 </tr>
 <tr>
