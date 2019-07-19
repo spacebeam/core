@@ -113,16 +113,16 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     <td>games</td>
     <td>
         <b>Type:</b> String<br><br>
-        Location of file with list of games to be played, relative to server.jar; No spaces.
-        The user will be prompted to generate a new games list if the file does not already exist (i.e. if this is a new tournament).
+        Location of file with list of games to be played.
+        The system will generate a new games list if the file does not already exist (i.e. if this is a new competition).
     </td>
 </tr>
 <tr>
     <td>results</td>
     <td>
         <b>Type:</b> String<br><br>
-        Clear existing results on server start? Allowed values: "yes" | "no" | "ask"<br>
-        If "yes" then a new tournament is always started when the server is started. If "no" then an existing tournament will be resumed if possible.
+        Location of file with list of results.
+        The system will generate a new results list of the file does not already exist (i.e. if this is a new competition).
     </td>
 </tr>
 <tr>
