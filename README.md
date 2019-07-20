@@ -130,7 +130,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     <td>
         <b>Type:</b> Object<br><br>
         Tournament Module settings control the tournament module DLL which is injected into each Starcraft instance with BWAPI.
-        It controls game speed, draws information to the screen, and outputs data about the game being played so that the client can tell if a bot has crashed, timed out, etc.
+        It controls game speed, and outputs data about the game being played so that the client can tell if a bot has crashed, timed out, etc.
     </td>
 </tr>
 <tr>
@@ -161,13 +161,13 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
 <tr>
     <td>tournament<br>.timeouts</td>
     <td>
-        <b>Type:</b> Array of json objects<br><br>
-        Each timeoutLimit object must contain the following name/value pairs:
+        <b>Type:</b> Array of objects<br><br>
+        Each  object must contain the following name/value pairs:
         <ul>
             <li><b>time:</b> Number</li>
             <li><b>frame:</b> Number</li>
         </ul>
-        A bot loses a game if it takes <b>timeinMS</b> or more time to advance a single frame <b>frameCount</b> times.
+        A bot loses a game if it takes <b>time</b> or more time to advance a single frame <b>fram</b> times.
         Timeout limits of more than 60,000 ms will not have an effect since timeouts of more than a minute are counted as crashes.
     </td>
 </tr>
