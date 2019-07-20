@@ -29,7 +29,7 @@ Normally a new game can be started only if:
 Once these two conditions are met, the server sends the required bot files, map, BWAPI.dll and TM.dll to the clients, specifying one as the host and another as the away machine. Those client's status are then set to **STARTING**.
 
 ### Clients
-Each client is handled by independent processes in the server, and if the client is **STARTING**, **RUNNING**, or **SENDING**, it sends periodic status updates back for remote monitoring.
+Each client is handled by independent processes, and if the client is **STARTING**, **RUNNING**, or **SENDING**, it sends periodic status updates back for remote monitoring.
 
 When a game finishes the results are sent back along with file I/O data and replay files, which are stored on the server. 
 
@@ -53,7 +53,7 @@ $ pkg -u starcraft run -x "Ophelia Blueberry"
 ```
 
 ## Settings
-All configuration is done in /etc/bw.yml. This file must parse as valid YAML or the competition will not start.
+All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](http://yaml.org) or the competition will not start.
 
 <table>
 <tr><th>Name</th><th>Value</th></tr>
@@ -75,7 +75,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     <td>maps</td>
     <td>
         <b>Type:</b> Array of strings<br><br>
-        Each round will be played on these maps at random order. The value should be the name of the map relative to the maps directory.
+        Each round will be played on these maps at random order. The value should be the name of the map.
     </td>
 </tr>
 
@@ -161,7 +161,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
 <tr>
     <td>tournament<br>.timeouts</td>
     <td>
-        <b>Type:</b> Array of objects<br><br>
+        <b>Type:</b> List of objects<br><br>
         Each  object must contain the following name/value pairs:
         <ul>
             <li><b>time:</b> Number</li>
