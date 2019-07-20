@@ -105,8 +105,8 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
     <td>
         <b>Type:</b> String<br><br>
         Allowed values: Slowest, Slower, Slow, Normal, Fast, Faster, Fastest<br>
-        This setting changes the game speed slider in the game creation lobby.
-        The actual game speed will be overridden by the tournament.local_speed setting, but the slider affects the number of latency frames in the game.
+        This changes the game speed slider in the game creation lobby.
+        The actual speed will be overridden by the tournament.local_speed setting, but the slider affects the number of latency frames in the game.
     </td>
 </tr>
 <tr>
@@ -168,7 +168,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid YAML or 
             <li><b>frame:</b> Number</li>
         </ul>
         A bot loses a game if it takes <b>time</b> or more to advance a single frame <b>frame</b> times.
-        Timeout limits of more than 60,000 ms will not have an effect since timeouts of more than a minute are counted as crashes.
+        Timeouts of more than 60,000 ms will not have an effect since timeouts of more than a minute are counted as crashes.
     </td>
 </tr>
 </table>
