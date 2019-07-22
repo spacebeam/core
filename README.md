@@ -169,7 +169,7 @@ Example /etc/bw.yml:
 
 ```yaml
 # The Computer League YAML file 
-bots
+bots:
     - Ophelia
     - Blueberry
 maps:
