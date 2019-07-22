@@ -110,19 +110,11 @@ All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](h
     </td>
 </tr>
 <tr>
-    <td>games</td>
-    <td>
-        <b>Type:</b> String<br><br>
-        Location of file with list of games to be played.
-        The system will generate a new games list if the file does not already exist (i.e. if this is a new competition).
-    </td>
-</tr>
-<tr>
     <td>results</td>
     <td>
         <b>Type:</b> String<br><br>
         Location of file with list of results.
-        The system will generate a new results list of the file does not already exist (i.e. if this is a new competition).
+        The system will generate a new results list if the file does not already exist (i.e. if this is a new competition).
     </td>
 </tr>
 <tr>
@@ -191,7 +183,6 @@ starcraft: /opt/StarCraft
 host: 127.0.0.1
 port: 1337
 speed: Normal
-games: games.txt
 results: results.txt
 # tm.dll configuration
 tournament:
