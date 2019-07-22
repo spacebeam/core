@@ -111,8 +111,8 @@ All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](h
 <tr>
     <td>tournament<br>.module</td>
     <td>
-        <b>Type:</b> Object<br><br>
-        Control the tournament module DLL which is injected into each StarCraft instance with BWAPI.
+        <b>Type:</b> String<br><br>
+        The Tournament Module DLL which is injected into each StarCraft instance with BWAPI.
         It controls game speed, and outputs data about the game being played so that the client can tell if a bot has crashed, timed out, etc.
     </td>
 </tr>
