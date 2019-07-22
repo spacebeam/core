@@ -103,8 +103,8 @@ All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](h
     <td>speed</td>
     <td>
         <b>Type:</b> String<br><br>
-        Allowed values: Slowest, Slower, Slow, Normal, Fast, Faster, Fastest<br>
-        This changes the game speed slider in the game creation lobby.
+        Allowed values: Slowest, Slower, Slow, Normal, Fast, Faster, Fastest<br><br>
+        This changes the speed slider in the game creation lobby.
         The actual speed will be overridden by the tournament.local_speed setting, but the slider affects the number of latency frames in the game.
     </td>
 </tr>
@@ -178,7 +178,7 @@ maps:
     - Eddy
     - Neo Aztec
     - Tau Cross
-# StarCraft: Brood War 1.16.1 Client
+# Brood War 1.16.1 Client
 starcraft: /opt/StarCraft
 host: 127.0.0.1
 port: 1337
