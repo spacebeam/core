@@ -82,7 +82,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](h
     <td>starcraft</td>
     <td>
         <b>Type:</b> String<br><br>
-        Location of StarCraft 1.16.1.
+        Location of StarCraft: Brood War 1.16.1.
     </td>
 </tr>
 <tr>
@@ -112,7 +112,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](h
     <td>tournament<br>.module</td>
     <td>
         <b>Type:</b> Object<br><br>
-        Tournament Module settings control the tournament module DLL which is injected into each Starcraft instance with BWAPI.
+        Control the tournament module DLL which is injected into each StarCraft instance with BWAPI.
         It controls game speed, and outputs data about the game being played so that the client can tell if a bot has crashed, timed out, etc.
     </td>
 </tr>
