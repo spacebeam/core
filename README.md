@@ -78,7 +78,6 @@ All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](h
         Each round will be played on these maps at random order. The value should be the name of the map.
     </td>
 </tr>
-
 <tr>
     <td>starcraft</td>
     <td>
@@ -107,14 +106,6 @@ All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](h
         Allowed values: Slowest, Slower, Slow, Normal, Fast, Faster, Fastest<br>
         This changes the game speed slider in the game creation lobby.
         The actual speed will be overridden by the tournament.local_speed setting, but the slider affects the number of latency frames in the game.
-    </td>
-</tr>
-<tr>
-    <td>results</td>
-    <td>
-        <b>Type:</b> String<br><br>
-        Location of file with list of results.
-        The system will generate a new results list if the file does not already exist (i.e. if this is a new competition).
     </td>
 </tr>
 <tr>
@@ -163,6 +154,14 @@ All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](h
         Timeouts of more than 60,000 ms will not have an effect since timeouts of more than a minute are counted as crashes.
     </td>
 </tr>
+<tr>
+    <td>results</td>
+    <td>
+        <b>Type:</b> String<br><br>
+        Location of file with list of results.
+        The system will generate a new results list if the file does not already exist (i.e. if this is a new competition).
+    </td>
+</tr>
 </table>
 
 Example /etc/bw.yml:
@@ -179,11 +178,11 @@ maps:
     - Eddy
     - Neo Aztec
     - Tau Cross
+# StarCraft: Brood War 1.16.1 Client
 starcraft: /opt/StarCraft
 host: 127.0.0.1
 port: 1337
 speed: Normal
-results: results.txt
 # tm.dll configuration
 tournament:
     module: bwapi-data/tm.dll
@@ -200,4 +199,5 @@ tournament:
         -
             time: 10000
             frame: 1
+results: results.txt
 ```
