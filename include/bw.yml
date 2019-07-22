@@ -12,10 +12,7 @@ maps:
 starcraft: /opt/StarCraft
 host: 127.0.0.1
 port: 1337
-type: Melee
 speed: Normal
-games: games.txt
-results: results.txt
 # tm.dll configuration
 tournament:
     module: bwapi-data/tm.dll
@@ -32,3 +29,4 @@ tournament:
         -
             time: 10000
             frame: 1
+results: results.txt
