@@ -58,6 +58,13 @@ All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](h
 <table>
 <tr><th>Name</th><th>Value</th></tr>
 <tr>
+    <td>starcraft</td>
+    <td>
+        <b>Type:</b> String<br><br>
+        Location of StarCraft: Brood War 1.16.1.
+    </td>
+</tr>
+<tr>
     <td>bots</td>
     <td>
         <b>Type:</b> Array of strings<br><br>
@@ -76,13 +83,6 @@ All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](h
     <td>
         <b>Type:</b> Array of strings<br><br>
         Each round will be played on these maps at random order. The value should be the name of the map.
-    </td>
-</tr>
-<tr>
-    <td>starcraft</td>
-    <td>
-        <b>Type:</b> String<br><br>
-        Location of StarCraft: Brood War 1.16.1.
     </td>
 </tr>
 <tr>
@@ -154,20 +154,13 @@ All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](h
         Timeouts of more than 60,000 ms will not have an effect since timeouts of more than a minute are counted as crashes.
     </td>
 </tr>
-<tr>
-    <td>results</td>
-    <td>
-        <b>Type:</b> String<br><br>
-        Location of file with list of results.
-        The system will generate a new results list if the file does not already exist (i.e. if this is a new competition).
-    </td>
-</tr>
 </table>
 
 Example /etc/bw.yml:
 
 ```yaml
 # The Computer League YAML file 
+starcraft: /opt/StarCraft
 bots:
     - Ophelia
     - Blueberry
@@ -175,18 +168,16 @@ maps:
     - Circuit Breaker
     - Fighting Spirit
     - Overwatch
-    - Eddy
-    - Neo Aztec
+    - Tres Pass
+    - Power Bond
     - Tau Cross
-# Brood War 1.16.1 Client
-starcraft: /opt/StarCraft
 host: 127.0.0.1
 port: 1337
 speed: Normal
 # tm.dll configuration
 tournament:
     module: bwapi-data/tm.dll
-    local_speed: 0
+    local_speed: 42 
     frame_skip: 256
     frame_limit: 85714
     timeouts:
@@ -199,5 +190,4 @@ tournament:
         -
             time: 10000
             frame: 1
-results: results.txt
 ```
