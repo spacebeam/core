@@ -8,6 +8,13 @@ function tools.this_is()
     print("this is only a test")
 end
 
+function tools.read_file(file)
+    local f = assert(io.open(file, "rb"))
+    local content = f:read("*all")
+    f:close()
+    return content
+end
+
 function tools.all_trim()
     return s:match("^%s*(.-)%s*$")
 end

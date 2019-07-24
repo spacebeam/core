@@ -1,4 +1,5 @@
 # The Computer League YAML file 
+starcraft: /opt/StarCraft
 bots:
     - Ophelia
     - Blueberry
@@ -6,17 +7,16 @@ maps:
     - Circuit Breaker
     - Fighting Spirit
     - Overwatch
-    - Eddy
-    - Neo Aztec
+    - Tres Pass 
+    - Power Bond
     - Tau Cross
-starcraft: /opt/StarCraft
 host: 127.0.0.1
 port: 1337
 speed: Normal
 # tm.dll configuration
 tournament:
     module: bwapi-data/tm.dll
-    local_speed: 0
+    local_speed: 42 
     frame_skip: 256
     frame_limit: 85714
     timeouts:
@@ -29,4 +29,3 @@ tournament:
         -
             time: 10000
             frame: 1
-results: results.txt
