@@ -43,16 +43,6 @@ local sc = args['directory']
 
 -- WHAT IF I GET STUFF FROM YML?
 
-local bots = sc .. "bots/"
-local games = sc .. "games/" 
-local maps = sc .. "maps/"
-local errors = sc .. "Errors/"
-local bwapi_data = sc .. "bwapi-data/"
-local bwapi_save = sc .. "bwapi-data/save"
-local bwapi_read = sc .. "bwapi-data/read"
-local bwapi_write = sc .. "bwapi-data/write"
-local bwapi_ai = sc .. "bwapi-data/AI"
-local bwapi_logs = sc .. "bwapi-data/logs"
 -- STATUS, STATUS, STATUS 
 if args['command'] == 'status' then
     print('status')
@@ -62,10 +52,6 @@ elseif args['command'] == 'play' then
     print(args['bots'])
     print(args['map'])
     print(args['directory'])
-    print(maps)
-    print(bwapi_ai)
-    print(bwapi_logs)
-    print(games)
 else
     -- do something else
     print(messages[1])
