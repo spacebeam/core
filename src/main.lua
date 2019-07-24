@@ -5,7 +5,6 @@
 local argparse = require("argparse")
 local socket = require("socket")
 local uuid = require("uuid")
-
 -- init random seed
 uuid.randomseed(socket.gettime()*10000)
 -- Session UUID
