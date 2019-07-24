@@ -67,7 +67,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](h
 <tr>
     <td>bots</td>
     <td>
-        <b>Type:</b> Array of strings<br><br>
+        <b>Type:</b> List of strings<br><br>
         These are the bots that will play in the competition.
         Each bot directory must contain a valid bot.yml file with the following name/value pairs:
         <ul>
@@ -81,7 +81,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](h
 <tr>
     <td>maps</td>
     <td>
-        <b>Type:</b> Array of strings<br><br>
+        <b>Type:</b> List of strings<br><br>
         Each round will be played on these maps at random order. The value should be the name of the map.
     </td>
 </tr>
