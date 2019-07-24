@@ -41,15 +41,15 @@ Your system need the latest release of Erlang, LuaJIT (with luarocks) and Singul
 ### Installation
 Then run this command:
 
-`luarocks install package`
+`luarocks install experience`
 
-`pkg -u starcraft install`
+`exp -u starcraft install`
 
 ## Headless play
 
 Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
 ```
-$ pkg -u starcraft run -x "Ophelia Blueberry"
+$ exp -u starcraft run -x "Ophelia Blueberry"
 ```
 
 ## Settings
