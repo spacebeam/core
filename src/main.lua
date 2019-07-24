@@ -6,9 +6,6 @@ local argparse = require("argparse")
 local socket = require("socket")
 local uuid = require("uuid")
 
--- BWAPI and TorchCraft use ini configuration files
-local ini = require(inifile)
-
 -- init random seed
 uuid.randomseed(socket.gettime()*10000)
 -- Session UUID
@@ -44,6 +41,9 @@ local messages = {
 local args = parser:parse()
 -- Your local variables
 local sc = args['directory']
+
+-- WHAT IF I GET STUFF FROM YML?
+
 local bots = sc .. "bots/"
 local games = sc .. "games/" 
 local maps = sc .. "maps/"
