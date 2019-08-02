@@ -191,3 +191,8 @@ tournament:
             time: 10000
             frame: 1
 ```
+## Help wanted
+Would you like to help with the project? Pick any of the issues tagged [help wanted](https://github.com/spacebeam/starcraft-sif/labels/help%20wanted) and contribute!
+
+## Contributing
+See  [Contributing](CONTRIBUTING.md).
