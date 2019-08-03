@@ -25,7 +25,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     apt-add-repository 'deb https://dl.winehq.org/wine-builds/debian/ stretch main'
     apt update
     rm winehq.key
-    apt -y install --install-recommends winehq-stable winetricks
+    apt -y install --install-recommends winehq-staging winetricks
     cd /opt && git clone https://github.com/torch/distro.git torch --recursive
     bash /opt/torch/install-deps
     cd /opt/torch/ && ./install.sh
@@ -34,10 +34,16 @@ MirrorURL: http://ftp.us.debian.org/debian/
     cd starcraft-scif
     cat include/core/core* > /opt/StarCraft.tar.gz
     tar -zxvf /opt/StarCraft.tar.gz -C /opt/
-    luarocks install *.rockspec
+    # luarocks install *.rockspec
     rm /opt/StarCraft.tar.gz
-    rm -Rf /usr/src/starcraft-scif
+    # rm -Rf /usr/src/starcraft-scif
+    apt install zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev\
+    libssl-dev libreadline-dev libffi-dev
+    cd /usr/src && curl -O https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tar.xz
+    tar -xf Python-3.7.4.tar.xz
+    cd Python-3.7.4 && make -j8 build_all && make -j8 altinstall
     apt-get clean
+    pip3.7 install torch
     echo 'Go ahead HQ.'
 
 %runscript
