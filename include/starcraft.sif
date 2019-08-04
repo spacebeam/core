@@ -30,12 +30,12 @@ MirrorURL: http://ftp.us.debian.org/debian/
     bash /opt/torch/install-deps
     cd /opt/torch/ && ./install.sh
     . /opt/torch/install/bin/torch-activate
-    #cd /usr/src && git clone https://github.com/spacebeam/starcraft-scif.git
-    #cd starcraft-scif
-    #cat include/core/core* > /opt/StarCraft.tar.gz
-    #tar -zxvf /opt/StarCraft.tar.gz -C /opt/
+    cd /usr/src && git clone https://github.com/spacebeam/starcraft-scif.git
+    cd starcraft-scif
+    cat include/core/core* > /opt/StarCraft.tar.gz
+    tar -zxvf /opt/StarCraft.tar.gz -C /opt/
     # luarocks install *.rockspec
-    #rm /opt/StarCraft.tar.gz
+    rm /opt/StarCraft.tar.gz
     # rm -Rf /usr/src/starcraft-scif
     apt -y install --install-recommends zlib1g-dev libncurses5-dev\
     libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev
