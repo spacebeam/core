@@ -15,7 +15,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     sed -i 's/$/ contrib/' /etc/apt/sources.list
     sed -i 's/$/ non-free/' /etc/apt/sources.list
     sed -i 's/$/ universe/' /etc/apt/sources.list
-    echo "Acquire::http::Proxy \"http://127.0.0.1:3142\";" | tee /etc/apt/apt.conf.d/0proxy
+    echo "Acquire::http::Proxy \"http://127.0.0.1:3142\";" | tee /etc/apt/apt.conf.d/00proxy
     apt update
     apt -y install --install-recommends git apt-transport-https\
     gnupg2 wget software-properties-common curl build-essential\
