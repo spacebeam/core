@@ -49,7 +49,7 @@ Then run this command:
 
 Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
 ```
-$ exp -u starcraft run -x "Ophelia Blueberry"
+$ exp -u starcraft run -x "Ophelia BananaBrain"
 ```
 
 ## Settings
