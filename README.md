@@ -5,7 +5,7 @@ It can download and launch Win32 C++ and Java bots or any Linux® bot with suppo
 
 It uses a server/client architecture with the host acting as a server and any number of other containers acting as clients.
 
-The system is written in a mixture of languages and can be run on Debian 10 or higher, either on a physical machine or a virtual machine.
+The system is written in a mixture of languages and can be run on Debian 9 or higher, either on a physical or virtual machine.
 
 All data send and received pass through ZMQ sockets, so no special network configuration is required to run the software.
 
