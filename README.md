@@ -163,7 +163,6 @@ Example /etc/bw.yml:
 starcraft: /opt/StarCraft
 bots:
     - Ophelia
-    - Blueberry
 maps:
     - Circuit Breaker
     - Fighting Spirit
