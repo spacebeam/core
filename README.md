@@ -154,7 +154,7 @@ All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](h
 </tr>
 </table>
 
-Example /etc/bw.yml:
+Example /opt/bw/include/bw.yml:
 
 ```yaml
 # The Computer League YAML file 
