@@ -45,9 +45,9 @@ Then run this command:
 
 ## Headless play
 
-Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [BananaBrain](https://liquipedia.net/starcraft/BananaBrain) on current maps.
+Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
 ```
-$ exp -u starcraft run -x "Ophelia BananaBrain"
+$ exp -u starcraft run -x "Ophelia Blueberry"
 ```
 
 ## Settings
@@ -161,7 +161,7 @@ Example /opt/bw/include/bw.yml:
 starcraft: /opt/StarCraft
 bots:
     - Ophelia
-    - BananaBrain
+    - Blueberry 
 maps:
     - Circuit Breaker
     - Fighting Spirit
