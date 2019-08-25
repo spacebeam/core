@@ -51,7 +51,7 @@ $ exp -u starcraft run -x "Ophelia BananaBrain"
 ```
 
 ## Settings
-All configuration is done in /etc/bw.yml. This file must parse as valid [YAML](http://yaml.org) or the competition will not start.
+All configuration is done in /opt/bw/include/bw.yml. This file must parse as valid [YAML](http://yaml.org) or the competition will not start.
 
 <table>
 <tr><th>Name</th><th>Value</th></tr>
