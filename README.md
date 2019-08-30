@@ -39,15 +39,15 @@ Your system need the latest release of Erlang, LuaJIT (with luarocks) and Singul
 ### Installation
 Then run this command:
 
-`luarocks install experience`
+`luarocks install exp`
 
 `exp -u starcraft install`
 
-## Headless play
+## Man vs Machine
 
-Launch headless play of [Ophelia](https://liquipedia.net/starcraft/Ophelia) and [Blueberry](https://liquipedia.net/starcraft/Blueberry) on current maps.
+Play against [Ophelia](https://liquipedia.net/starcraft/Ophelia) or any other bot on competitive maps.
 ```
-$ exp -u starcraft run -x "Ophelia Blueberry"
+$ exp -u starcraft run -x "Ophelia"
 ```
 
 ## Settings
@@ -161,7 +161,6 @@ Example /opt/bw/include/bw.yml:
 starcraft: /opt/StarCraft
 bots:
     - Ophelia
-    - Blueberry 
 maps:
     - Circuit Breaker
     - Fighting Spirit
