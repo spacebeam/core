@@ -166,7 +166,7 @@ maps:
     - Fighting Spirit
     - Overwatch
 host: 127.0.0.1
-port: 1337
+port: 58008
 speed: Normal
 # tm.dll configuration
 tournament:
