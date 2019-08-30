@@ -165,15 +165,12 @@ maps:
     - Circuit Breaker
     - Fighting Spirit
     - Overwatch
-    - Tres Pass
-    - Power Bond
-    - Tau Cross
 host: 127.0.0.1
-port: 1337
+port: 58008
 speed: Normal
 # tm.dll configuration
 tournament:
-    module: bwapi-data/tm.dll
+    module: tm.dll
     local_speed: 42 
     frame_skip: 256
     frame_limit: 85714
