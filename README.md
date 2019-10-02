@@ -102,8 +102,7 @@ All configuration is done in /opt/bw/include/bw.yml. This file must parse as val
     <td>
         <b>Type:</b> String<br><br>
         Allowed values: Slowest, Slower, Slow, Normal, Fast, Faster, Fastest<br><br>
-        This changes the speed slider in the game creation lobby.
-        The actual speed will be overridden by the tournament.local_speed setting, but the slider affects the number of latency frames in the game.
+        This changes the speed slider in the game creation lobby it affects the number of latency frames in the game.
     </td>
 </tr>
 </table>
