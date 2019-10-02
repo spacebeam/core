@@ -43,7 +43,7 @@ Then run this command:
 
 `exp -u starcraft install`
 
-## Man vs Machine
+## Have fun
 
 Play against [Ophelia](https://liquipedia.net/starcraft/Ophelia) or any other bot on competitive maps.
 ```
@@ -111,14 +111,11 @@ All configuration is done in /opt/bw/include/bw.yml. This file must parse as val
 Example /opt/bw/include/bw.yml:
 
 ```yaml
-# The Computer League YAML file 
 starcraft: /opt/StarCraft
 bots:
     - Ophelia
 maps:
-    - Circuit Breaker
     - Fighting Spirit
-    - Overwatch
 host: 127.0.0.1
 port: 58008
 speed: Normal
