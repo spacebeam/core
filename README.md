@@ -43,7 +43,7 @@ Then run this command:
 
 `exp -u starcraft install`
 
-## Have fun
+## Good luck, have fun 
 
 Play against [Ophelia](https://liquipedia.net/starcraft/Ophelia) or any other bot on competitive maps.
 ```
