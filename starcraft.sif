@@ -47,7 +47,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     pip3.7 install torch
     luarocks install lyaml YAML_LIBDIR=/usr/lib/x86_64-linux-gnu/
     luarocks install luasec OPENSSL_LIBDIR=/usr/lib/x86_64-linux-gnu/
-    cd /usr/src && git clone https://github.com/spacebeam/bw.git
+    cd /opt && git clone https://github.com/spacebeam/bw.git
     cd bw && luarocks make *.rockspec
     echo 'Go ahead HQ.'
 
