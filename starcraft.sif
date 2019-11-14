@@ -19,7 +19,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     apt update
     apt -y install --install-recommends git apt-transport-https\
     gnupg2 wget software-properties-common curl build-essential\
-    gfortran pkg-config make cmake libyaml-0-2
+    gfortran pkg-config make cmake libyaml-0-2 libyaml-dev
     dpkg --add-architecture i386
     wget -nc https://dl.winehq.org/wine-builds/winehq.key
     apt-key add winehq.key
