@@ -51,4 +51,4 @@ MirrorURL: http://ftp.us.debian.org/debian/
 
 %runscript
     winetricks -q vcrun2013
-    bw $*
+    /opt/torch/install/bin/bw $*
