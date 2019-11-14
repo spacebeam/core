@@ -41,7 +41,7 @@ Then run this command:
 
 `luarocks install exp`
 
-`exp -u starcraft install`
+`exp -u starcraft build`
 
 ## Good luck, have fun 
 
@@ -51,7 +51,9 @@ $ exp -u starcraft run -x "Ophelia"
 ```
 
 ## Settings
-All configuration is done in /opt/bw/include/bw.yml. This file must parse as valid [YAML](http://yaml.org) or the competition will not start.
+All configuration is done in `/opt/bw/bw.lua`. This file must exist or the competition will not start.
+
+TBA: change table from yml to simple lua.
 
 <table>
 <tr><th>Name</th><th>Value</th></tr>
