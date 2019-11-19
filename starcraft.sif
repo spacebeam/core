@@ -30,7 +30,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386\
     libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386 libgl1-mesa-glx:i386\
     libgl1-mesa-dri:i386 mesa-vulkan-drivers 
-    apt -y install --install-recommends winehq-stable winetricks
+    apt -y install --install-recommends winehq-staging winetricks
     cd /opt && git clone https://github.com/torch/distro.git torch --recursive
     bash /opt/torch/install-deps
     cd /opt/torch/ && ./install.sh
@@ -53,8 +53,11 @@ MirrorURL: http://ftp.us.debian.org/debian/
     luarocks install luasec OPENSSL_LIBDIR=/usr/lib/x86_64-linux-gnu/
     cd /opt && git clone https://github.com/spacebeam/bw.git
     cd bw && luarocks make *.rockspec
+    adduser --disabled-login --gecos "" --shell /forbid/login wine
+    usermod --append --groups audio wine
+    sudo -u wine WINEARCH=win32 wine wineboot
+    sudo -u wine winetricks -q vcrun2013
     echo 'Go ahead HQ.'
 
 %runscript
-    winetricks -q vcrun2013
     /opt/torch/install/bin/bw $*
