@@ -55,7 +55,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     cd bw && luarocks make *.rockspec
     adduser --disabled-login --gecos "" --shell /forbid/login wine
     usermod --append --groups audio wine
-    sudo -u wine WINEARCH=win32 wine wineboot
+    sudo -u wine WINEARCH=win32 wineboot
     sudo -u wine winetricks -q vcrun2013
     echo 'Go ahead HQ.'
 
