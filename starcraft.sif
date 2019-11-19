@@ -55,9 +55,11 @@ MirrorURL: http://ftp.us.debian.org/debian/
     cd bw && luarocks make *.rockspec
     adduser --disabled-login --gecos "" --shell /forbid/login wine
     usermod --append --groups audio wine
-    sudo -u wine WINEARCH=win32 wineboot
-    sudo -u wine winetricks -q vcrun2013
+    xhost +SI:localuser:wine
+    sudo -u wine env HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine WINEARCH=win32 wineboot
+    sudo -u wine env HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q vcrun2013
     echo 'Go ahead HQ.'
 
 %runscript
-    /opt/torch/install/bin/bw $*
+    xhost +SI:localuser:wine
+    sudo -u wine /opt/torch/install/bin/bw $*
