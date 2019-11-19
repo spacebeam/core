@@ -5,6 +5,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
 %environment
     LANG=C.UTF-8
     LC_ALL=C.UTF-8
+    WINEDLLOVERRIDES="mscoree,mshtml="
 
 %labels
     name starcraft
@@ -55,11 +56,11 @@ MirrorURL: http://ftp.us.debian.org/debian/
     cd bw && luarocks make *.rockspec
     adduser --disabled-login --gecos "" --shell /forbid/login wine
     usermod --append --groups audio wine
-    xhost +SI:localuser:wine
-    sudo -u wine env HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine WINEARCH=win32 wineboot
-    sudo -u wine env HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q vcrun2013
+    Xvfb :0 -auth ~/.Xauthority -screen 0 640x480x24
+    xvfb-run sudo -u wine env HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine WINEARCH=win32 wineboot
+    xvfb-run sudo -u wine env HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q vcrun2013
     echo 'Go ahead HQ.'
 
 %runscript
-    xhost +SI:localuser:wine
-    sudo -u wine /opt/torch/install/bin/bw $*
+    Xvfb :0 -auth ~/.Xauthority -screen 0 640x480x24
+    xvfb-run sudo -u wine /opt/torch/install/bin/bw $*
