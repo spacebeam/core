@@ -51,7 +51,7 @@ $ exp -u starcraft run -x "Ophelia"
 ```
 
 ## Settings
-All configuration is done in `/etc/exp/starcraft.yml`. This file must exist or the competition will not start.
+All configuration is done in `/etc/exp/units.d/starcraft.yml`. This file must exist or the competition will not start.
 
 <table>
 <tr><th>Name</th><th>Value</th></tr>
@@ -107,17 +107,45 @@ All configuration is done in `/etc/exp/starcraft.yml`. This file must exist or t
 </tr>
 </table>
 
-Example /etc/exp/starcraft.yml:
+Example /etc/exp/units.d/starcraft.yml:
 
 ```yaml
+# Torch Up: Brood War AI Tournament YAML file 
 starcraft: /opt/StarCraft
 bots:
     - Ophelia
+    - Blueberry
 maps:
+    - Circuit Breaker
     - Fighting Spirit
+    - Overwatch
+    - Power Bond
+    - Heartbreak Ridge
+    - Gold Rush
+    - Gladiator
+    - Blue Storm
+    - Neo Aztec
+    - Sparkle
 host: 127.0.0.1
 port: 58008
 speed: Normal
+# tm.dll configuration
+tournament:
+    module: bwapi-data/tm.dll
+    local_speed: 42 
+    frame_skip: 256
+    frame_limit: 85714
+    timeouts:
+        -
+            time: 55
+            frame: 320
+        - 
+            time: 1000
+            frame: 10
+        -
+            time: 10000
+            frame: 1
+
 ```
 ## Help wanted
 Would you like to help with the project? Pick any of the issues tagged [help wanted](https://github.com/spacebeam/starcraft-sif/labels/help%20wanted) and contribute!
