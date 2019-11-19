@@ -43,7 +43,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     rm /opt/StarCraft.tar.gz
     rm -Rf /usr/src/starcraft-scif
     apt -y install --install-recommends zlib1g-dev libncurses5-dev\
-    libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev
+    libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev xvfb
     cd /usr/src && curl -O https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tar.xz
     tar -xf Python-3.7.4.tar.xz
     cd Python-3.7.4 && ./configure --enable-optimizations
