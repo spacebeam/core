@@ -51,9 +51,7 @@ $ exp -u starcraft run -x "Ophelia"
 ```
 
 ## Settings
-All configuration is done in `/opt/bw/bw.lua`. This file must exist or the competition will not start.
-
-TBA: change table from yml to simple lua.
+All configuration is done in `/etc/exp/starcraft.yml`. This file must exist or the competition will not start.
 
 <table>
 <tr><th>Name</th><th>Value</th></tr>
@@ -109,7 +107,7 @@ TBA: change table from yml to simple lua.
 </tr>
 </table>
 
-Example /opt/bw/include/bw.yml:
+Example /etc/exp/starcraft.yml:
 
 ```yaml
 starcraft: /opt/StarCraft
