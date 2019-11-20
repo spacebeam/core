@@ -37,7 +37,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     cd /opt/torch/ && ./install.sh
     . /opt/torch/install/bin/torch-activate
     cd /usr/src && git clone https://github.com/spacebeam/starcraft-scif.git
-    cd starcraft-scif && Xvfb :1 -screen 0 640x480x24 </dev/null &
+    Xvfb :1 -screen 0 640x480x24 </dev/null && cd starcraft-scif
     cat include/core/core* > /opt/StarCraft.tar.gz
     tar -zxvf /opt/StarCraft.tar.gz -C /opt/
     rm /opt/StarCraft.tar.gz
