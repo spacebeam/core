@@ -37,7 +37,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     cd /opt/torch/ && ./install.sh
     . /opt/torch/install/bin/torch-activate
     cd /usr/src && git clone https://github.com/spacebeam/starcraft-scif.git
-    cd starcraft-scif
+    cd starcraft-scif && Xvfb :1 -screen 0 640x480x24 </dev/null &
     cat include/core/core* > /opt/StarCraft.tar.gz
     tar -zxvf /opt/StarCraft.tar.gz -C /opt/
     rm /opt/StarCraft.tar.gz
@@ -56,7 +56,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     cd bw && luarocks make *.rockspec
     adduser --disabled-login --gecos "" --shell /forbid/login wine
     usermod --append --groups audio wine
-    Xvfb :1 -screen 0 640x480x24 </dev/null &
+    cd /home/wine && chown wine:wine -R .wine && chown wine:wine -R .wine/*
     xvfb-run sudo -u wine env HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine WINEARCH=win32 wineboot
     xvfb-run sudo -u wine env HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q vcrun2013
     echo 'Go ahead HQ.'
