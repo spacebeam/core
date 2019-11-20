@@ -31,13 +31,14 @@ MirrorURL: http://ftp.us.debian.org/debian/
     libgpg-error0:i386 libxml2:i386 libasound2-plugins:i386 libsdl2-2.0-0:i386\
     libfreetype6:i386 libdbus-1-3:i386 libsqlite3-0:i386 libgl1-mesa-glx:i386\
     libgl1-mesa-dri:i386 mesa-vulkan-drivers xvfb 
+    Xvfb :1 -screen 0 640x480x24 &
     apt -y install --install-recommends winehq-staging winetricks
     cd /opt && git clone https://github.com/torch/distro.git torch --recursive
     bash /opt/torch/install-deps
     cd /opt/torch/ && ./install.sh
     . /opt/torch/install/bin/torch-activate
     cd /usr/src && git clone https://github.com/spacebeam/starcraft-scif.git
-    Xvfb :1 -screen 0 640x480x24 </dev/null && cd starcraft-scif
+    cd starcraft-scif
     cat include/core/core* > /opt/StarCraft.tar.gz
     tar -zxvf /opt/StarCraft.tar.gz -C /opt/
     rm /opt/StarCraft.tar.gz
