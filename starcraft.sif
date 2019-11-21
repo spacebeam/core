@@ -57,12 +57,11 @@ MirrorURL: http://ftp.us.debian.org/debian/
     cd bw && luarocks make *.rockspec
     adduser --disabled-login --gecos "" --shell /forbid/login wine
     usermod --append --groups audio wine
-    cd /home/wine && chown wine:wine -R *
+    chown wine:wine -R /home/wine
     xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine WINEARCH=win32 wineboot &
-    chown wine:wine -R .wine
     xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q vcrun2013 &
     echo 'Go ahead HQ.'
 
 %runscript
-    Xvfb :1 -screen 0 640x480x24 </dev/null &
+    Xvfb :1 -screen 0 640x480x24 &
     xvfb-run sudo -u wine /opt/torch/install/bin/bw $*
