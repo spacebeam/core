@@ -59,6 +59,8 @@ MirrorURL: http://ftp.us.debian.org/debian/
     chown wine:wine -R /home/wine
     xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine WINEARCH=win32 wineboot &
     xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q vcrun2013 &
+    xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q vcrun2015 &
+    xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q dxvk &
     echo 'Go ahead HQ.'
 
 %runscript
