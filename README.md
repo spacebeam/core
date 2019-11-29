@@ -113,8 +113,8 @@ Example /etc/exp/units.d/starcraft.yml:
 # Torch Up: Brood War AI Tournament YAML file 
 starcraft: /opt/StarCraft
 bots:
+    - DaQueen
     - Ophelia
-    - Blueberry
 maps:
     - Circuit Breaker
     - Fighting Spirit
