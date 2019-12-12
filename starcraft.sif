@@ -10,7 +10,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
 %labels
     name starcraft
     maintainer jchassoul
-    version 0.1.0
+    version 0.2.0
 
 %post
     sed -i 's/$/ contrib/' /etc/apt/sources.list
