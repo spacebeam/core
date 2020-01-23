@@ -53,7 +53,7 @@ $ exp -u starcraft run -x 'play --bots Ophelia'
 Host a bot vs bot game.
 
 ```
-$exp -u starcraft run -x 'play --bots Ophelia:TCPZerg'
+$ exp -u starcraft run -x 'play --bots Ophelia:TCPZerg'
 ```
 
 
