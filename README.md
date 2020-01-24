@@ -117,7 +117,8 @@ All configuration is done in `/etc/exp/units.d/starcraft.yml`. This file must ex
 Example /etc/exp/units.d/starcraft.yml:
 
 ```yaml
-# Torch Up: Brood War AI Tournament YAML file 
+# Torch Up: Brood War AI Tournament YAML file
+# Join the annual competition at https://torchup.org
 starcraft: /opt/StarCraft
 bots:
     - Locutus
