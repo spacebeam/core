@@ -120,26 +120,32 @@ Example /etc/exp/units.d/starcraft.yml:
 # Torch Up: Brood War AI Tournament YAML file 
 starcraft: /opt/StarCraft
 bots:
-    - Ophelia
+    - Locutus
+    - PurpleWave
+    - Halo
+    - BunkerBoxer
+    - Letabot
+    - Ecgberht
+    - Microwave
+    - CUNYBot
+    - Crona
+    - StyxZ
+    - ZZZKBot
     - TCPZerg
 maps:
     - Circuit Breaker
-    - Fighting Spirit
-    - Overwatch
-    - Power Bond
-    - Heartbreak Ridge
-    - Gold Rush
-    - Gladiator
+    - Aztec
     - Blue Storm
-    - Neo Aztec
+    - Gladiator
+    - Gold Rush
+    - Heartbreak Ridge
+    - Fighting Spirit
+    - Power Bond
+    - Overwatch
     - Sparkle
 host: 127.0.0.1
 port: 58008
 speed: Normal
-# tm.dll configuration
-tournament:
-    local_speed: 42 
-    frame_limit: 86400
 ```
 ## Help wanted
 Would you like to help with the project? Pick any of the issues tagged [help wanted](https://github.com/spacebeam/starcraft-sif/labels/help%20wanted) and contribute!
