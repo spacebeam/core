@@ -109,7 +109,7 @@ All configuration is done in `/etc/exp/units.d/starcraft.yml`. This file must ex
     <td>
         <b>Type:</b> String<br><br>
         Allowed values: Slowest, Slower, Slow, Normal, Fast, Faster, Fastest<br><br>
-        This changes the speed slider in the game creation lobby it affects the number of latency frames in the game.
+        This changes the speed slider in the creation lobby it affects the number of latency frames in the game.
     </td>
 </tr>
 </table>
