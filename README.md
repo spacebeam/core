@@ -45,10 +45,17 @@ Then run this command:
 
 ## Good luck, have fun 
 
-Play against [Ophelia](https://liquipedia.net/starcraft/Ophelia) or any other bot on competitive maps.
+Play against [Ophelia](https://liquipedia.net/starcraft/Ophelia) or any other bot on competitive maps,
 ```
-$ exp -u starcraft run -x "Ophelia"
+$ exp -u starcraft run -x 'play --bots Ophelia'
 ```
+
+Host a bot vs bot game.
+
+```
+$ exp -u starcraft run -x 'play --bots Ophelia:TCPZerg'
+```
+
 
 ## Settings
 All configuration is done in `/etc/exp/units.d/starcraft.yml`. This file must exist or the competition will not start.
@@ -113,8 +120,8 @@ Example /etc/exp/units.d/starcraft.yml:
 # Torch Up: Brood War AI Tournament YAML file 
 starcraft: /opt/StarCraft
 bots:
-    - DaQueen
     - Ophelia
+    - TCPZerg
 maps:
     - Circuit Breaker
     - Fighting Spirit
@@ -131,21 +138,8 @@ port: 58008
 speed: Normal
 # tm.dll configuration
 tournament:
-    module: bwapi-data/tm.dll
     local_speed: 42 
-    frame_skip: 256
-    frame_limit: 85714
-    timeouts:
-        -
-            time: 55
-            frame: 320
-        - 
-            time: 1000
-            frame: 10
-        -
-            time: 10000
-            frame: 1
-
+    frame_limit: 86400
 ```
 ## Help wanted
 Would you like to help with the project? Pick any of the issues tagged [help wanted](https://github.com/spacebeam/starcraft-sif/labels/help%20wanted) and contribute!
