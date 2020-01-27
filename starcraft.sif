@@ -40,8 +40,6 @@ MirrorURL: http://ftp.us.debian.org/debian/
     cd starcraft-scif
     cat include/core/core* > /opt/StarCraft.tar.gz
     tar -zxvf /opt/StarCraft.tar.gz -C /opt/
-    rm /opt/StarCraft.tar.gz
-    rm -Rf /usr/src/starcraft-scif
     apt -y install --install-recommends zlib1g-dev libncurses5-dev\
     libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev 
     cd /usr/src && curl -O https://www.python.org/ftp/python/3.7.4/Python-3.7.4.tar.xz
@@ -58,9 +56,13 @@ MirrorURL: http://ftp.us.debian.org/debian/
     usermod --append --groups audio wine
     chown wine:wine -R /home/wine
     xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine WINEARCH=win32 wineboot 
+    xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q vcrun2012 
     xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q vcrun2013 
     xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q vcrun2015 
     xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q dxvk 
+    bash /usr/src/starcraft-scif/include/install_java.sh
+    rm /opt/StarCraft.tar.gz
+    rm -Rf /usr/src/starcraft-scif
     echo 'Go ahead HQ.'
 
 %runscript
