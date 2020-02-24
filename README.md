@@ -29,9 +29,7 @@ Once these two conditions are met, the server sends the required bot files, map 
 ### Clients
 Each client is handled by independent processes, and if the client is **STARTING**, **RUNNING**, or **SENDING**, it sends periodic status updates back for remote monitoring.
 
-When a game finishes the results are sent back along with file I/O data and replay files, which are stored on the server. 
-
-This process repeats until the competition has finished.
+When a game finishes the results are sent back along with file I/O data and replay files, which are stored on the server.
 
 ## Getting started
 Your system need the latest release of Erlang, LuaJIT (with luarocks) and Singularity installed.
