@@ -43,9 +43,9 @@ Then run this command:
 
 ## Good luck, have fun 
 
-Play against [TCPZerg](https://liquipedia.net/starcraft/Ophelia) or any other bot on competitive maps,
+Play against [Ophelia](https://liquipedia.net/starcraft/Ophelia) or any other bot on competitive maps,
 ```
-$ exp -u starcraft run -x 'play --bots TCPZerg'
+$ exp -u starcraft run -x 'play --bots Ophelia'
 ```
 
 Host a bot vs bot game.
