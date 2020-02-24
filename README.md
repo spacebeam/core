@@ -43,9 +43,9 @@ Then run this command:
 
 ## Good luck, have fun 
 
-Play against [Ophelia](https://liquipedia.net/starcraft/Ophelia) or any other bot on competitive maps,
+Play against [TCPZerg](https://liquipedia.net/starcraft/Ophelia) or any other bot on competitive maps,
 ```
-$ exp -u starcraft run -x 'play --bots Ophelia'
+$ exp -u starcraft run -x 'play --bots TCPZerg'
 ```
 
 Host a bot vs bot game.
@@ -75,7 +75,7 @@ All configuration is done in `/etc/exp/units.d/starcraft.yml`. This file must ex
         Each bot directory must contain a valid bot.yml file with the following name/value pairs:
         <ul>
         <li><b>name:</b> String name of the bot, matching the bot directory name</li>
-        <li><b>race:</b> Terran, Zerg, Protoss, Random</li>
+        <li><b>race:</b> Terran, Zerg, Protoss</li>
         <li><b>type:</b> Java, DLL, EXE, Linux</li>
         <li><b>bwapi:</b> 4.1.2, 4.2.0, 4.4.0</li>
         </ul>
@@ -115,8 +115,10 @@ All configuration is done in `/etc/exp/units.d/starcraft.yml`. This file must ex
 Example /etc/exp/units.d/starcraft.yml:
 
 ```yaml
-# Torch Up: Brood War AI Tournament YAML file
-# Join the annual competition at https://torchup.org
+#
+# Torch Up: Brood War AI Tournament
+# https://torchup.org
+#
 starcraft: /opt/StarCraft
 bots:
     - Locutus
