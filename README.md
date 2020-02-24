@@ -1,5 +1,5 @@
 # starcraft-sif
-This software is a tool for running StarCraft AI competitions inside a [SIF](https://github.com/sylabs/singularity) file based container image, auditable, secure, and easy to move using existing data mobility paradigms.
+This software is a tool for running StarCraft as AI testbed inside a [SIF](https://github.com/sylabs/singularity) file based container image, auditable, secure, and easy to move using existing data mobility paradigms.
 
 It can download and launch Win32 C++ and Java bots or any Linux® bot with support for BWAPI `4.1.2, 4.2.0, 4.4.0`.
 
