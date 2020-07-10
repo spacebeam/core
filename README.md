@@ -1,5 +1,5 @@
 # starcraft-sif
-This software is a tool for running StarCraft AI competitions inside a [SIF](https://github.com/sylabs/singularity) file based container image, auditable, secure, and easy to move using existing data mobility paradigms.
+This software is a tool for running StarCraft: Brood War as AI testbed inside a [SIF](https://github.com/sylabs/singularity) file based container image, auditable, secure, and easy to move using existing data mobility paradigms.
 
 It can download and launch Win32 C++ and Java bots or any Linux® bot with support for BWAPI `4.1.2, 4.2.0, 4.4.0`.
 
@@ -29,9 +29,7 @@ Once these two conditions are met, the server sends the required bot files, map 
 ### Clients
 Each client is handled by independent processes, and if the client is **STARTING**, **RUNNING**, or **SENDING**, it sends periodic status updates back for remote monitoring.
 
-When a game finishes the results are sent back along with file I/O data and replay files, which are stored on the server. 
-
-This process repeats until the competition has finished.
+When a game finishes the results are sent back along with file I/O data and replay files, which are stored on the server.
 
 ## Getting started
 Your system need the latest release of Erlang, LuaJIT (with luarocks) and Singularity installed.
@@ -77,7 +75,7 @@ All configuration is done in `/etc/exp/units.d/starcraft.yml`. This file must ex
         Each bot directory must contain a valid bot.yml file with the following name/value pairs:
         <ul>
         <li><b>name:</b> String name of the bot, matching the bot directory name</li>
-        <li><b>race:</b> Terran, Zerg, Protoss, Random</li>
+        <li><b>race:</b> Terran, Zerg, Protoss</li>
         <li><b>type:</b> Java, DLL, EXE, Linux</li>
         <li><b>bwapi:</b> 4.1.2, 4.2.0, 4.4.0</li>
         </ul>
@@ -117,8 +115,10 @@ All configuration is done in `/etc/exp/units.d/starcraft.yml`. This file must ex
 Example /etc/exp/units.d/starcraft.yml:
 
 ```yaml
-# Torch Up: Brood War AI Tournament YAML file
-# Join the annual competition at https://torchup.org
+#
+# Torch Up: Brood War AI Tournament
+# https://torchup.org
+#
 starcraft: /opt/StarCraft
 bots:
     - Locutus
