@@ -1,0 +1,13 @@
+tornado
+cython
+futures
+schematics
+numpy
+scipy
+torch
+arrow
+pyzmq
+Jinja2
+pycurl
+ujson
+msgpack-python
