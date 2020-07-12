@@ -15,7 +15,6 @@ MirrorURL: http://ftp.us.debian.org/debian/
 %post
     sed -i 's/$/ contrib/' /etc/apt/sources.list
     sed -i 's/$/ non-free/' /etc/apt/sources.list
-    sed -i 's/$/ universe/' /etc/apt/sources.list
     apt update
     apt -y install --install-recommends git apt-transport-https\
     gnupg2 wget software-properties-common curl build-essential\

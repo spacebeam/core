@@ -37,26 +37,26 @@ Your system need the latest release of Erlang, LuaJIT (with luarocks) and Singul
 ### Installation
 Then run this command:
 
-`luarocks install exp`
+`luarocks install spacebeam`
 
-`exp -u starcraft build`
+`luna -u starcraft build`
 
 ## Good luck, have fun 
 
 Play against [Ophelia](https://liquipedia.net/starcraft/Ophelia) or any other bot on competitive maps,
 ```
-$ exp -u starcraft run -x 'play --bots Ophelia'
+$ luna -u starcraft run -x 'play --bots Ophelia'
 ```
 
 Host a bot vs bot game.
 
 ```
-$ exp -u starcraft run -x 'play --bots Locutus:TCPZerg'
+$ luna -u starcraft run -x 'play --bots Locutus:TCPZerg'
 ```
 
 
 ## Settings
-All configuration is done in `/etc/exp/units.d/starcraft.yml`. This file must exist or the competition will not start.
+All configuration is done in `/etc/luna/units.d/starcraft.yml`. This file must exist or the competition will not start.
 
 <table>
 <tr><th>Name</th><th>Value</th></tr>
@@ -112,7 +112,7 @@ All configuration is done in `/etc/exp/units.d/starcraft.yml`. This file must ex
 </tr>
 </table>
 
-Example /etc/exp/units.d/starcraft.yml:
+Example /etc/luna/units.d/starcraft.yml:
 
 ```yaml
 #
