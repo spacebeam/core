@@ -47,7 +47,7 @@ def options():
         default=57999,
         type=int,
         help=('Server port'))
-    # paga size
+    # page size
     tornado.options.define(
         'page_size',
         default=297,
