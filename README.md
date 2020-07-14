@@ -131,7 +131,8 @@ bots:
     - Crona
     - StyxZ
     - ZZZKBot
-    - TCPZerg
+    - Ophelia
+    - Blueberry
 maps:
     - Circuit Breaker
     - Aztec
@@ -142,7 +143,6 @@ maps:
     - Fighting Spirit
     - Power Bond
     - Overwatch
-    - Sparkle
 host: 127.0.0.1
 port: 58008
 speed: Normal
