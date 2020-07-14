@@ -4,38 +4,30 @@
 
 import argparse
 
-parser = argparse.ArgumentParser(descroption='host a game with bwheadless')
+parser = argparse.ArgumentParser(description='host a game with bwheadless')
 
 parser.add_argument('-p', '--path',
-                    type='str',
+                    type=str,
                     default='/opt/StarCraft/',
                     help='StarCraft path')
 parser.add_argument('-b', '--bot',
-                    type='str',
+                    type=str,
                     default='blueberry')
 parser.add_argument('-r', '--race',
-                    type='str',
+                    type=str,
                     default='Terran')
 parser.add_argument('-m', '--map',
-                    type='str',
+                    type=str,
                     default='\(4\)FightingSpirit1.3.scx')
 
 args = parser.parse_args()
 
-path = args.path
-
-bot = args.bot
-
-race = args.race
-
-map = args.map
-
 execute = '''
-wine bwheadless.exe -e /opt/StarCraft/StarCraft.exe\
- -l /opt/StarCraft/bwapi-data/BWAPI.dll --host\
- --name blueberry --game blueberry --race T\
- --map maps/TorchUp/\(4\)FightingSpirit1.3.scx&\
+wine bwheadless.exe -e {0}StarCraft.exe\
+ -l {0}bwapi-data/BWAPI.dll --host\
+ --name {1} --game {1} --race {2}\
+ --map maps/TorchUp/{3}&\
 wine Chaoslauncher/Chaoslauncher.exe
-'''
+'''.format(args.path, args.bot, args.race[:1], args.map)
 
 print(execute)
