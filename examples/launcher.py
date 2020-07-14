@@ -3,6 +3,7 @@
 # Run bwheadless.exe and Chaoslauncher.exe from here!
 
 import argparse
+import os
 
 parser = argparse.ArgumentParser(description='host a game with bwheadless')
 
@@ -30,4 +31,6 @@ wine bwheadless.exe -e {0}StarCraft.exe\
 wine Chaoslauncher/Chaoslauncher.exe
 '''.format(args.path, args.bot, args.race[:1], args.map)
 
-print(execute)
+os.chdir(args.path)
+command = os.popen(execute).read()
+print(command)
