@@ -1,8 +1,8 @@
-tornado
 cython
+tornado
 schematics
 numpy
 torch
-pyzmq
 pycurl
+pyzmq
 ujson
