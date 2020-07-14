@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# launch bwheadless and chaoslauncher from here!
+# Run bwheadless.exe and Chaoslauncher.exe from here!
 
 import argparse
 
@@ -8,6 +8,7 @@ parser = argparse.ArgumentParser(descroption='host a local pc game with bwheadle
 
 parser.add_argument('-p', '--path', type='str', default='/opt/StarCraft/', help='StarCraft path')
 parser.add_argument('-b', '--bot', type='str', default='blueberry')
+parser.add_argument('-r', '--race', type='str', default='Terran')
 parser.add_argument('-m', '--map', type='str', default='\(4\)FightingSpirit1.3.scx')
 
 args = parser.parse_args()
