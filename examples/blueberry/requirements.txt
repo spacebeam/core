@@ -7,7 +7,5 @@ scipy
 torch
 arrow
 pyzmq
-Jinja2
 pycurl
 ujson
-msgpack-python
