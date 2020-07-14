@@ -1,11 +1,8 @@
 tornado
 cython
-futures
 schematics
 numpy
-scipy
 torch
-arrow
 pyzmq
 pycurl
 ujson
