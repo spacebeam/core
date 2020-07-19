@@ -1,3 +1,4 @@
+# learning to use the tochcraft python client!
 
 import argparse
 import torchcraft as tc
@@ -30,10 +31,19 @@ def get_closest(x, y, units):
 skip_frames = 7
 
 
+# TODO: state.resources_myself.used_psi, state.resources_myself.total_psi
+
+# TODO: tc:filter_type, tc:isbuilding, state.resources_myself.ore
+
+# TODO: tc:isworker (?)
+
+# TODO: explore whatever is in tc! where are our functions!
+
+# TODO: pretty print the state and compare with the javascript data structure
+
+
 while True:
-    print("")
     print("CTRL-C to stop")
-    print("")
     loop = 0
     client = tc.Client()
     client.connect(args.hostname, args.port)
