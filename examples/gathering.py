@@ -37,7 +37,7 @@ while True:
     loop = 0
     client = tc.Client()
     client.connect(args.hostname, args.port)
-    state = client.init(micro_battles=False)
+    state = client.init(micro_battles=True)
     for pid, player in state.player_info.items():
         print("player {} named {} is {}".format(
             player.id, player.name,
