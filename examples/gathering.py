@@ -24,6 +24,7 @@ built_barracks = 0
 
 # active doing
 building_supply = False
+# producing what friend?
 producing = False
 
 # units
@@ -93,6 +94,14 @@ while True:
                         workers.append(unit.id)
 
                     # check if building do [a, b, c] if worker do [x, y, z]
+                    if tc.Constants.unittypes._dict[unit.type]\
+                            == 'Terran_Command_Center':
+
+                        if not producing\
+                                and state.frame.resources[bot['id']].ore >= 50\
+                                and state.frame.resources[bot['id']].used_psi\
+                                != state.frame.resources[bot['id']].total_psi:
+                            print('mini mini mini')
 
                     print(tc.Constants.unittypes._dict.get(unit.type))
 
