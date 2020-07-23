@@ -73,25 +73,27 @@ while True:
         if state.game_ended:
             break
         else:
+
+            # this is making the spaguetti, those are probably ids xD
+
             units = state.units[0]
             enemy = state.units[1]
             if state.battle_frame_count % skip_frames == 0:
 
-                # xD
+                workers = []
 
                 if state.frame.resources[bot.get('id')].used_psi != state.frame.resources[bot.get('id')].total_psi:
                     building_supply = False
 
-                # xD xD
-
-                # Get the worker count
-
-                # check ur stuff if building do [a, b, c] if worker do [x, y, z]
+                # check if building do [a, b, c] if worker do [x, y, z]
 
                 # else and just else... gather some resources? wtf xD
 
                 # ok go!
                 for unit in units:
+
+                    if tc.Constants.unittypes._dict[unit.type] == 'Terran_SCV':
+                        workers.append(unit.id)
 
                     print(tc.Constants.unittypes._dict.get(unit.type))
 
@@ -103,10 +105,12 @@ while True:
                             tcc.unitcommandtypes.Attack_Unit,
                             target.id,
                         ])
+                print(workers)
+
         print("Sending actions: {}".format(str(actions)))
         print(state.map_name)
         print(state.map_size)
-        print(state.start_locations)
+        # print(state.start_locations)
         print(state.frame.resources[bot['id']].ore)
         print(state.frame.resources[bot['id']].gas)
         print(state.frame.resources[bot['id']].used_psi)
