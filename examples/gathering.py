@@ -43,23 +43,11 @@ bunkers = 0
 refineries = 0
 
 
-# TODO: state.resources_myself.used_psi, state.resources_myself.total_psi
+# TODO: tc:filter_type, tc:isbuilding
 
-# TODO: tc:filter_type, tc:isbuilding, state.resources_myself.ore
-
-# TODO: tc:isworker (?)
-
-# TODO: explore whatever is in tc! where are our functions!
+# TODO: isworker, isbuilding, tc.command2order tc.unitcommandtypes, tc.command_unit
 
 # TODO: pretty print the state and compare with the javascript data structure
-
-# and now for something completely different!
-
-# TODO: state.resources_myself.used_psi, state.resources_myself.total_psi
-
-# TODO: filter_type, state.units_myself, isbuilding state.resources_myself.ore
-
-# TODO:isworker, tc.command2order tc.unitcommandtypes, tc.command_unit
 
 while True:
     print("CTRL-C to stop")
@@ -68,9 +56,6 @@ while True:
     client.connect('127.0.0.1', 11111)
     state = client.init(micro_battles=True)
     for pid, player in state.player_info.items():
-        print("player {} named {} is {}".format(
-            player.id, player.name,
-            tc.Constants.races._dict[player.race]))
         if bot['name'] == player.name:
             bot['id'] = player.id
             bot['race'] = tc.Constants.races._dict[player.race]
@@ -102,5 +87,8 @@ while True:
         print("Sending actions: {}".format(str(actions)))
         # print(state.map_name)
         print(state.frame.resources[bot['id']].ore)
+        print(state.frame.resources[bot['id']].gas)
+        print(state.frame.resources[bot['id']].used_psi)
+        print(state.frame.resources[bot['id']].total_psi)
         client.send(actions)
     client.close()
