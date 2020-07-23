@@ -28,7 +28,33 @@ def get_closest(x, y, units):
     return u
 
 
+bot = {'name': 'blueberry'}
+
 skip_frames = 7
+
+# check past
+built_barracks = 0
+
+# active doing
+building_supply = False
+producing = False
+
+# units
+units = None
+workers = 0
+
+# buildings
+supply_depots = 0
+barracks = 0
+command_centers = 0
+factories = 0
+starports = 0
+turrets = 0
+engineering_bay = 0
+academy = 0
+armory = 0
+bunkers = 0
+refineries = 0
 
 
 # TODO: state.resources_myself.used_psi, state.resources_myself.total_psi
@@ -41,6 +67,13 @@ skip_frames = 7
 
 # TODO: pretty print the state and compare with the javascript data structure
 
+# and now for something completely different!
+
+# TODO: state.resources_myself.used_psi, state.resources_myself.total_psi
+
+# TODO: filter_type, state.units_myself, isbuilding state.resources_myself.ore
+
+# TODO:isworker, tc.command2order tc.unitcommandtypes, tc.command_unit
 
 while True:
     print("CTRL-C to stop")
@@ -52,6 +85,9 @@ while True:
         print("player {} named {} is {}".format(
             player.id, player.name,
             tc.Constants.races._dict[player.race]))
+        if bot['name'] == player.name:
+            bot['id'] = player.id
+            bot['race'] = tc.Constants.races._dict[player.race]
     # Initial setup
     client.send([
         [tcc.set_speed, 0],
@@ -78,5 +114,7 @@ while True:
                             target.id,
                         ])
         print("Sending actions: {}".format(str(actions)))
+        # print(state.map_name)
+        print(state.frame.resources[bot['id']].ore)
         client.send(actions)
     client.close()
