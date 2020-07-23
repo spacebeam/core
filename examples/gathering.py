@@ -93,15 +93,18 @@ while True:
                     if tc.Constants.unittypes._dict[unit.type] == 'Terran_SCV':
                         workers.append(unit.id)
 
-                    # check if building do [a, b, c] if worker do [x, y, z]
+                    # check if building do [a, b, c] else worker do [x, y, z]
                     if tc.Constants.unittypes._dict[unit.type]\
                             == 'Terran_Command_Center':
-
+                        # train worker only if not producing(?)
                         if not producing\
                                 and state.frame.resources[bot['id']].ore >= 50\
                                 and state.frame.resources[bot['id']].used_psi\
                                 != state.frame.resources[bot['id']].total_psi:
+                            # Target, x, y are all 0
                             print('mini mini mini')
+                            # to train a unit you MUST input into "extra" field
+                            producing = True
 
                     print(tc.Constants.unittypes._dict.get(unit.type))
 
