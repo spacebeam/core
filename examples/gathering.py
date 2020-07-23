@@ -3,6 +3,7 @@
 import torchcraft as tc
 import torchcraft.Constants as tcc
 
+
 def get_closest(x, y, units):
     dist = float('inf')
     u = None
@@ -43,9 +44,9 @@ bunkers = 0
 refineries = 0
 
 
-# TODO: tc:filter_type, tc:isbuilding
+# TODO: isworker, filter_type, isbuilding
 
-# TODO: isworker, isbuilding, tc.command2order tc.unitcommandtypes, tc.command_unit
+# TODO: command2order unitcommandtypes, command_unit
 
 # TODO: pretty print the state and compare with the javascript data structure
 
@@ -75,7 +76,25 @@ while True:
             units = state.units[0]
             enemy = state.units[1]
             if state.battle_frame_count % skip_frames == 0:
+
+                # xD
+
+                if state.frame.resources[bot.get('id')].used_psi != state.frame.resources[bot.get('id')].total_psi:
+                    building_supply = False
+
+                # xD xD
+
+                # Get the worker count
+
+                # check ur stuff if building do [a, b, c] if worker do [x, y, z]
+
+                # else and just else... gather some resources? wtf xD
+
+                # ok go!
                 for unit in units:
+
+                    print(tc.Constants.unittypes._dict.get(unit.type))
+
                     target = get_closest(unit.x, unit.y, enemy)
                     if target is not None:
                         actions.append([
@@ -85,7 +104,9 @@ while True:
                             target.id,
                         ])
         print("Sending actions: {}".format(str(actions)))
-        # print(state.map_name)
+        print(state.map_name)
+        print(state.map_size)
+        print(state.start_locations)
         print(state.frame.resources[bot['id']].ore)
         print(state.frame.resources[bot['id']].gas)
         print(state.frame.resources[bot['id']].used_psi)
