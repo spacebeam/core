@@ -13,7 +13,7 @@ parser.add_argument('-p', '--path',
                     help='StarCraft path')
 parser.add_argument('-b', '--bot',
                     type=str,
-                    default='blueberry')
+                    default='Blueberry')
 parser.add_argument('-r', '--race',
                     type=str,
                     default='Terran')
