@@ -86,8 +86,6 @@ while True:
                 if used_psi != total_psi:
                     building_supply = False
 
-                # else and just else... gather some resources? wtf xD
-
                 # ok go!
                 for unit in units:
 
@@ -106,6 +104,8 @@ while True:
                             tcc.unitcommandtypes.Attack_Unit,
                             target.id,
                         ])
+
+                    # else and just else... gather some resources? wtf xD
 
                 print(workers)
 
