@@ -15,7 +15,7 @@ def get_closest(x, y, units):
     return u
 
 
-bot = {'name': 'blueberry'}
+bot = {'id': 0, 'name': 'Blueberry'}
 
 skip_frames = 7
 
@@ -60,6 +60,8 @@ while True:
         if bot['name'] == player.name:
             bot['id'] = player.id
             bot['race'] = tc.Constants.races._dict[player.race]
+        else:
+            bot['enemy'] = (player.id if player.name != 'Neutral' else False)
     # Initial setup
     client.send([
         [tcc.set_speed, 0],
@@ -69,23 +71,20 @@ while True:
     while not state.game_ended:
         loop += 1
         state = client.recv()
+        workers = []
         actions = []
         if state.game_ended:
             break
         else:
-
-            # this is making the spaguetti, those are probably ids xD
-
-            units = state.units[0]
-            enemy = state.units[1]
+            units = state.units[bot['id']]
+            enemy = state.units[bot['enemy']]
             if state.battle_frame_count % skip_frames == 0:
 
-                workers = []
+                used_psi = state.frame.resources[bot['id']].used_psi
+                total_psi = state.frame.resources[bot['id']].total_psi
 
-                if state.frame.resources[bot.get('id')].used_psi != state.frame.resources[bot.get('id')].total_psi:
+                if used_psi != total_psi:
                     building_supply = False
-
-                # check if building do [a, b, c] if worker do [x, y, z]
 
                 # else and just else... gather some resources? wtf xD
 
@@ -94,6 +93,8 @@ while True:
 
                     if tc.Constants.unittypes._dict[unit.type] == 'Terran_SCV':
                         workers.append(unit.id)
+
+                    # check if building do [a, b, c] if worker do [x, y, z]
 
                     print(tc.Constants.unittypes._dict.get(unit.type))
 
@@ -105,6 +106,7 @@ while True:
                             tcc.unitcommandtypes.Attack_Unit,
                             target.id,
                         ])
+
                 print(workers)
 
         print("Sending actions: {}".format(str(actions)))
@@ -113,7 +115,7 @@ while True:
         # print(state.start_locations)
         print(state.frame.resources[bot['id']].ore)
         print(state.frame.resources[bot['id']].gas)
-        print(state.frame.resources[bot['id']].used_psi)
-        print(state.frame.resources[bot['id']].total_psi)
+        # print(state.frame.resources[bot['id']].used_psi)
+        # print(state.frame.resources[bot['id']].total_psi)
         client.send(actions)
     client.close()
