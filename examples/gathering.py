@@ -102,7 +102,13 @@ while True:
                                 and state.frame.resources[bot['id']].used_psi\
                                 != state.frame.resources[bot['id']].total_psi:
                             # Target, x, y are all 0
-                            print('mini mini mini')
+                            actions.append([
+                                tcc.command_unit_protected,
+                                unit.id,
+                                tcc.unitcommandtypes.Train_Unit,
+
+                            ])
+
                             # to train a unit you MUST input into "extra" field
                             producing = True
 
