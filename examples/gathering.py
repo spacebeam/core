@@ -105,10 +105,12 @@ while True:
                             actions.append([
                                 tcc.command_unit_protected,
                                 unit.id,
-                                tcc.unitcommandtypes.Train_Unit,
-
+                                tcc.unitcommandtypes.Train,
+                                0,
+                                0,
+                                0,
+                                tc.Constants.unittypes.Terran_SCV,
                             ])
-
                             # to train a unit you MUST input into "extra" field
                             producing = True
 
