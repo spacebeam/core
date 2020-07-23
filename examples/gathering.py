@@ -1,21 +1,7 @@
 # learning to use the tochcraft python client!
 
-import argparse
 import torchcraft as tc
 import torchcraft.Constants as tcc
-
-parser = argparse.ArgumentParser(
-    description='Plays simple micro battles with an attack closest heuristic')
-parser.add_argument('-t',
-                    '--hostname',
-                    type=str,
-                    default='127.0.0.1',
-                    help='Hostname where SC is running')
-parser.add_argument('-p', '--port', default=11111,
-                    help="Port to use")
-
-args = parser.parse_args()
-
 
 def get_closest(x, y, units):
     dist = float('inf')
@@ -79,7 +65,7 @@ while True:
     print("CTRL-C to stop")
     loop = 0
     client = tc.Client()
-    client.connect(args.hostname, args.port)
+    client.connect('127.0.0.1', 11111)
     state = client.init(micro_battles=True)
     for pid, player in state.player_info.items():
         print("player {} named {} is {}".format(
