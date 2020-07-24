@@ -35,9 +35,8 @@ workers = 0
 refinery = 0
 
 
-# TODO: command_unit
-
 # TODO: log state and compare the javascript data structure
+
 
 while True:
     print("CTRL-C to stop")
@@ -98,6 +97,20 @@ while True:
                             producing = True
                     if tcc.isworker(unit.type):
                         workers.append(unit.id)
+                        # build refinery
+                        if state.frame.resources[bot['id']].ore >= 100:
+                            # cool and all but, where is my geyser?
+                            for nu in neutral:
+                                if tcc.unittypes._dict[nu.type] == 'Resource_Vespene_Geyser':
+                                    actions.append([
+                                        tcc.command_unit,
+                                        unit.id,
+                                        tcc.unitcommandtypes.Build,
+                                        -1,
+                                        nu.x - 8,
+                                        nu.y - 4,
+                                        tcc.unittypes.Terran_Refinery,
+                                    ])
                         # tests gathering
                         for order in unit.orders:
                             if order.type not in tcc.command2order[tcc.unitcommandtypes.Gather]\
