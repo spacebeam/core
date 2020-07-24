@@ -1,4 +1,5 @@
-# Learning to use the TochCraft Python 3 client!
+# do what you can, what you want,
+# what you must, feel the hunger inside!
 
 import torchcraft as tc
 import torchcraft.Constants as tcc
@@ -15,23 +16,23 @@ def get_closest(x, y, units):
     return u
 
 
+# sinsemilla
 bot = {'name': 'Blueberry'}
 
 skip_frames = 7
 # check past
-built_barracks = 0
+built_refinery = 0
 # active doing
-building_supply = False
-# producing what friend?
+building_refinery = False
+# hmm, ok!
 producing = False
+
 # units
 units = None
 workers = 0
+
 # buildings
-supply_depots = 0
-barracks = 0
-command_centers = 0
-refineries = 0
+refinery = 0
 
 
 # TODO: command_unit
@@ -98,28 +99,18 @@ while True:
                     if tcc.isworker(unit.type):
                         workers.append(unit.id)
                         # tests gathering
-
                         for order in unit.orders:
-                            print(tcc.order2command[order.type])
-
-                        if unit.orders:
-
-                            # if tcc.command2order[tcc.unitcommandtypes.Gather] not in unit.orders and tcc.command2order[tcc.unitcommandtypes.Right_Click_Position] not in unit.orders:
-                            # lolz
-                            target = get_closest(unit.x, unit.y, neutral)
-                            if target is not None:
-                                actions.append([
-                                    tcc.command_unit_protected,
-                                    unit.id,
-                                    tcc.unitcommandtypes.Right_Click_Unit,
-                                    target.id,
-                                ])
-                        # print(tcc.unitcommandtypes.Gather)
-                        # print(tcc.unitcommandtypes.Build)
-                        # print(tcc.unitcommandtypes.Right_Click_Position)
-                        # print(tcc.command2order[tcc.unitcommandtypes.Gather])
-                        # print(tcc.command2order[tcc.unitcommandtypes.Build])
-                        # print(tcc.command2order[tcc.unitcommandtypes.Right_Click_Position])
+                            if order.type not in tcc.command2order[tcc.unitcommandtypes.Gather]\
+                             and order.type not in tcc.command2order[tcc.unitcommandtypes.Build]\
+                             and order.type not in tcc.command2order[tcc.unitcommandtypes.Right_Click_Position]:
+                                target = get_closest(unit.x, unit.y, neutral)
+                                if target is not None:
+                                    actions.append([
+                                        tcc.command_unit_protected,
+                                        unit.id,
+                                        tcc.unitcommandtypes.Right_Click_Unit,
+                                        target.id,
+                                    ])
                     else:
                         target = get_closest(unit.x, unit.y, enemy)
                         if target is not None:
@@ -130,6 +121,6 @@ while True:
                                 target.id,
                             ])
                 # print(workers)
-        print("Sending actions: {}".format(str(actions)))
+        # print("Sending actions: {}".format(str(actions)))
         client.send(actions)
     client.close()
