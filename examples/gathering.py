@@ -15,7 +15,7 @@ def get_closest(x, y, units):
     return u
 
 
-bot = {'id': 0, 'name': 'Blueberry'}
+bot = {'name': 'Blueberry'}
 
 skip_frames = 7
 # check past
@@ -106,8 +106,6 @@ while True:
                         print(tcc.command2order[tcc.unitcommandtypes.Build])
                         print(tcc.command2order[tcc.unitcommandtypes.Right_Click_Position])
                         # lolz
-                        print(state.player_id)
-                        print(state.neutral_id)
                         print(neutral)
                         # target = get_closest(unit.x, unit.y, state.frame.units_neutral, [])
                     else:
