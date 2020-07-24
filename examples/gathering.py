@@ -35,9 +35,6 @@ workers = 0
 refinery = 0
 
 
-# TODO: log state and compare the javascript data structure
-
-
 while True:
     print("CTRL-C to stop")
     loop = 0
@@ -99,7 +96,6 @@ while True:
                         workers.append(unit.id)
                         # build refinery
                         if state.frame.resources[bot['id']].ore >= 100:
-                            # cool and all but, where is my geyser?
                             for nu in neutral:
                                 if tcc.unittypes._dict[nu.type] == 'Resource_Vespene_Geyser':
                                     actions.append([
