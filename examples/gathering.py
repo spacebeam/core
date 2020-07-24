@@ -34,7 +34,7 @@ command_centers = 0
 refineries = 0
 
 
-# TODO: command2order unitcommandtypes, command_unit
+# TODO: command_unit
 
 # TODO: log state and compare the javascript data structure
 
@@ -44,12 +44,6 @@ while True:
     client = tc.Client()
     client.connect('127.0.0.1', 11111)
     state = client.init(micro_battles=True)
-    for pid, player in state.player_info.items():
-        if bot['name'] == player.name:
-            bot['id'] = player.id
-            bot['race'] = tc.Constants.races._dict[player.race]
-        else:
-            bot['enemy'] = (player.id if player.name != 'Neutral' else False)
     # Initial setup
     client.send([
         [tcc.set_speed, 0],
@@ -59,12 +53,20 @@ while True:
     while not state.game_ended:
         loop += 1
         state = client.recv()
+        for pid, player in state.player_info.items():
+            if bot['name'] == player.name:
+                bot['id'] = state.player_id
+                bot['neutral'] = state.neutral_id
+                bot['race'] = tc.Constants.races._dict[player.race]
+            else:
+                bot['enemy'] = (player.id if player.name != 'Neutral' else False)
         workers = []
         actions = []
         if state.game_ended:
             break
         else:
             units = state.units[bot['id']]
+            neutral = state.units[bot['neutral']]
             enemy = state.units[bot['enemy']]
             if state.battle_frame_count % skip_frames == 0:
                 used_psi = state.frame.resources[bot['id']].used_psi
@@ -95,6 +97,19 @@ while True:
                             producing = True
                     if tcc.isworker(unit.type):
                         workers.append(unit.id)
+                        # tests gathering
+                        print('unit order: {}'.format(unit.orders))
+                        print(tcc.unitcommandtypes.Gather)
+                        print(tcc.unitcommandtypes.Build)
+                        print(tcc.unitcommandtypes.Right_Click_Position)
+                        print(tcc.command2order[tcc.unitcommandtypes.Gather])
+                        print(tcc.command2order[tcc.unitcommandtypes.Build])
+                        print(tcc.command2order[tcc.unitcommandtypes.Right_Click_Position])
+                        # lolz
+                        print(state.player_id)
+                        print(state.neutral_id)
+                        print(neutral)
+                        # target = get_closest(unit.x, unit.y, state.frame.units_neutral, [])
                     else:
                         target = get_closest(unit.x, unit.y, enemy)
                         if target is not None:
