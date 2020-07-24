@@ -98,16 +98,28 @@ while True:
                     if tcc.isworker(unit.type):
                         workers.append(unit.id)
                         # tests gathering
-                        print('unit order: {}'.format(unit.orders))
-                        print(tcc.unitcommandtypes.Gather)
-                        print(tcc.unitcommandtypes.Build)
-                        print(tcc.unitcommandtypes.Right_Click_Position)
-                        print(tcc.command2order[tcc.unitcommandtypes.Gather])
-                        print(tcc.command2order[tcc.unitcommandtypes.Build])
-                        print(tcc.command2order[tcc.unitcommandtypes.Right_Click_Position])
-                        # lolz
-                        print(neutral)
-                        # target = get_closest(unit.x, unit.y, state.frame.units_neutral, [])
+
+                        for order in unit.orders:
+                            print(tcc.order2command[order.type])
+
+                        if unit.orders:
+
+                            # if tcc.command2order[tcc.unitcommandtypes.Gather] not in unit.orders and tcc.command2order[tcc.unitcommandtypes.Right_Click_Position] not in unit.orders:
+                            # lolz
+                            target = get_closest(unit.x, unit.y, neutral)
+                            if target is not None:
+                                actions.append([
+                                    tcc.command_unit_protected,
+                                    unit.id,
+                                    tcc.unitcommandtypes.Right_Click_Unit,
+                                    target.id,
+                                ])
+                        # print(tcc.unitcommandtypes.Gather)
+                        # print(tcc.unitcommandtypes.Build)
+                        # print(tcc.unitcommandtypes.Right_Click_Position)
+                        # print(tcc.command2order[tcc.unitcommandtypes.Gather])
+                        # print(tcc.command2order[tcc.unitcommandtypes.Build])
+                        # print(tcc.command2order[tcc.unitcommandtypes.Right_Click_Position])
                     else:
                         target = get_closest(unit.x, unit.y, enemy)
                         if target is not None:
@@ -117,9 +129,7 @@ while True:
                                 tcc.unitcommandtypes.Attack_Unit,
                                 target.id,
                             ])
-                print(workers)
+                # print(workers)
         print("Sending actions: {}".format(str(actions)))
-        print(state.map_name)
-        print(state.frame.resources[bot['id']].gas)
         client.send(actions)
     client.close()
