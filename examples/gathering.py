@@ -1,5 +1,6 @@
 # do what you can, what you want,
-# what you must, feel the hunger inside!
+# what you must, feel the hunger inside,
+# hold on to your trust!
 
 import torchcraft as tc
 import torchcraft.Constants as tcc
@@ -20,7 +21,10 @@ def get_closest(x, y, units):
 bot = {'name': 'Blueberry'}
 
 skip_frames = 7
+
+powering = True
 # hmm, ok!
+building_refinery = False
 producing = False
 
 # units
@@ -30,10 +34,10 @@ workers = 0
 # buildings
 refinery = 0
 
-# learning to extract some gas
+# TODO: We Require More Vespene Gas
 gas_harvesting = []
 
-
+# let's keep going..
 while True:
     print("CTRL-C to stop")
     loop = 0
@@ -55,7 +59,7 @@ while True:
                 bot['neutral'] = state.neutral_id
                 bot['race'] = tc.Constants.races._dict[player.race]
             else:
-                bot['enemy'] = (player.id if player.name != 'Neutral' else False)
+                bot['enemy'] = (player.id if player.name != 'Neutral' else None)
         workers = []
         actions = []
         if state.game_ended:
@@ -97,6 +101,7 @@ while True:
                         if state.frame.resources[bot['id']].ore >= 100:
                             for nu in neutral:
                                 if tcc.unittypes._dict[nu.type] == 'Resource_Vespene_Geyser':
+                                    gas_harvesting.append(unit.id)
                                     actions.append([
                                         tcc.command_unit,
                                         unit.id,
@@ -106,19 +111,34 @@ while True:
                                         nu.y - 4,
                                         tcc.unittypes.Terran_Refinery,
                                     ])
+                                    building_refinery = True
                         # tests gathering
                         for order in unit.orders:
                             if order.type not in tcc.command2order[tcc.unitcommandtypes.Gather]\
                              and order.type not in tcc.command2order[tcc.unitcommandtypes.Build]\
-                             and order.type not in tcc.command2order[tcc.unitcommandtypes.Right_Click_Position]:
-                                target = get_closest(unit.x, unit.y, neutral)
-                                if target is not None:
-                                    actions.append([
-                                        tcc.command_unit_protected,
-                                        unit.id,
-                                        tcc.unitcommandtypes.Right_Click_Unit,
-                                        target.id,
-                                    ])
+                             and order.type not in tcc.command2order[tcc.unitcommandtypes.Right_Click_Position]\
+                             and not building_refinery:
+                                if len(gas_harvesting) == 1:
+                                    print('one or {}'.format(gas_harvesting[0]))
+                                elif len(gas_harvesting) == 2:
+                                    pass
+                                elif len(gas_harvesting) == 3:
+                                    pass
+                                else:
+                                    print('omfg {0}'.format(len(gas_harvesting)))
+                                    target = get_closest(unit.x, unit.y, neutral)
+                                    if target is not None:
+                                        actions.append([
+                                            tcc.command_unit_protected,
+                                            unit.id,
+                                            tcc.unitcommandtypes.Right_Click_Unit,
+                                            target.id,
+                                        ])
+                            else:
+                                print('wtf')
+                        # we need to check the worker ids
+                        # and put 3 of them, including the one that build the refinery
+                        # into gas harvesting!
                     else:
                         target = get_closest(unit.x, unit.y, enemy)
                         if target is not None:
