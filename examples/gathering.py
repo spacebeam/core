@@ -20,10 +20,6 @@ def get_closest(x, y, units):
 bot = {'name': 'Blueberry'}
 
 skip_frames = 7
-# check past
-built_refinery = 0
-# active doing
-building_refinery = False
 # hmm, ok!
 producing = False
 
@@ -33,6 +29,9 @@ workers = 0
 
 # buildings
 refinery = 0
+
+# learning to extract some gas
+gas_harvesting = []
 
 
 while True:
