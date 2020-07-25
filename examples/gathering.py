@@ -24,6 +24,7 @@ skip_frames = 7
 
 powering = True
 # hmm, ok!
+building_supply = False
 building_refinery = False
 producing = False
 
@@ -34,8 +35,6 @@ workers = 0
 # buildings
 refinery = 0
 
-# TODO: We Require More Vespene Gas
-gas_harvesting = []
 
 # let's keep going..
 while True:
@@ -62,6 +61,11 @@ while True:
                 bot['enemy'] = (player.id if player.name != 'Neutral' else None)
         workers = []
         actions = []
+
+        # yo...
+        # TODO: We Require More Vespene Gas
+        gas_harvesting = []
+
         if state.game_ended:
             break
         else:
@@ -98,7 +102,7 @@ while True:
                     if tcc.isworker(unit.type):
                         workers.append(unit.id)
                         # build refinery
-                        if state.frame.resources[bot['id']].ore >= 100:
+                        if state.frame.resources[bot['id']].ore >= 100 and not building_refinery:
                             for nu in neutral:
                                 if tcc.unittypes._dict[nu.type] == 'Resource_Vespene_Geyser':
                                     gas_harvesting.append(unit.id)
@@ -111,7 +115,7 @@ while True:
                                         nu.y - 4,
                                         tcc.unittypes.Terran_Refinery,
                                     ])
-                                    building_refinery = True
+                            building_refinery = True
                         # tests gathering
                         for order in unit.orders:
                             if order.type not in tcc.command2order[tcc.unitcommandtypes.Gather]\
@@ -135,6 +139,7 @@ while True:
                                             target.id,
                                         ])
                             else:
+                                print(len(gas_harvesting))
                                 print('wtf')
                         # we need to check the worker ids
                         # and put 3 of them, including the one that build the refinery
@@ -148,7 +153,7 @@ while True:
                                 tcc.unitcommandtypes.Attack_Unit,
                                 target.id,
                             ])
-                # print(workers)
+                print(len(workers))
         # print("Sending actions: {}".format(str(actions)))
         client.send(actions)
     client.close()
