@@ -36,6 +36,10 @@ workers = 0
 refinery = 0
 
 
+# S=
+gas_harvesting = []
+
+
 # let's keep going..
 while True:
     print("CTRL-C to stop")
@@ -62,9 +66,8 @@ while True:
         workers = []
         actions = []
 
-        # yo...
         # TODO: We Require More Vespene Gas
-        gas_harvesting = []
+        # gas_harvesting = []
 
         if state.game_ended:
             break
@@ -139,8 +142,7 @@ while True:
                                             target.id,
                                         ])
                             else:
-                                print(len(gas_harvesting))
-                                print('wtf')
+                                print('wtf {}'.format(len(gas_harvesting)))
                         # we need to check the worker ids
                         # and put 3 of them, including the one that build the refinery
                         # into gas harvesting!
