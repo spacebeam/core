@@ -22,10 +22,8 @@ bot = {'name': 'Blueberry'}
 
 skip_frames = 7
 
-powering = True
-# hmm, ok!
-building_supply = False
 building_refinery = False
+gas_harvesting = []
 producing = False
 
 # units
@@ -34,10 +32,6 @@ workers = 0
 
 # buildings
 refinery = 0
-
-
-# S=
-gas_harvesting = []
 
 
 # let's keep going..
@@ -65,10 +59,6 @@ while True:
                 bot['enemy'] = (player.id if player.name != 'Neutral' else None)
         workers = []
         actions = []
-
-        # TODO: We Require More Vespene Gas
-        # gas_harvesting = []
-
         if state.game_ended:
             break
         else:
@@ -85,7 +75,6 @@ while True:
                     if tcc.isbuilding(unit.type)\
                      and tc.Constants.unittypes._dict[unit.type]\
                      == 'Terran_Command_Center':
-                        # train worker only if not producing(?)
                         if not producing\
                                 and state.frame.resources[bot['id']].ore >= 50\
                                 and state.frame.resources[bot['id']].used_psi\
