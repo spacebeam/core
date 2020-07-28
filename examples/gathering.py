@@ -1,7 +1,3 @@
-# do what you can, what you want,
-# what you must, feel the hunger inside,
-# hold on to your trust!
-
 import torchcraft as tc
 import torchcraft.Constants as tcc
 
@@ -31,10 +27,9 @@ units = None
 workers = 0
 
 # buildings
-refinery = 0
+refinery = None 
 
 
-# let's keep going..
 while True:
     print("CTRL-C to stop")
     loop = 0
@@ -66,11 +61,6 @@ while True:
             neutral = state.units[bot['neutral']]
             enemy = state.units[bot['enemy']]
             if state.battle_frame_count % skip_frames == 0:
-                used_psi = state.frame.resources[bot['id']].used_psi
-                total_psi = state.frame.resources[bot['id']].total_psi
-                if used_psi != total_psi:
-                    building_supply = False
-                # ok go!
                 for unit in units:
                     if tcc.isbuilding(unit.type)\
                      and tc.Constants.unittypes._dict[unit.type]\
@@ -91,9 +81,12 @@ while True:
                             ])
                             # to train a unit you MUST input into "extra" field
                             producing = True
+                    elif tcc.isbuilding(unit.type)\
+                     and tc.Constants.unittypes._dict[unit.type]\
+                     == 'Terran_Refinery' and str(unit.flags)[-4:] == '8256' and not refinery:
+                        refinery = unit.id
                     if tcc.isworker(unit.type):
                         workers.append(unit.id)
-                        # build refinery
                         if state.frame.resources[bot['id']].ore >= 100 and not building_refinery:
                             for nu in neutral:
                                 if tcc.unittypes._dict[nu.type] == 'Resource_Vespene_Geyser':
@@ -108,33 +101,37 @@ while True:
                                         tcc.unittypes.Terran_Refinery,
                                     ])
                             building_refinery = True
-                        # tests gathering
+                        elif building_refinery and gas_harvesting[0] != unit.id\
+                         and len(gas_harvesting) == 1 and refinery:
+                            gas_harvesting.append(unit.id)
+                            actions.append([
+                                tcc.command_unit_protected,
+                                unit.id,
+                                tcc.unitcommandtypes.Right_Click_Unit,
+                                refinery
+                            ])
+                        elif refinery and gas_harvesting[0] != unit.id\
+                         and gas_harvesting[1] != unit.id and len(gas_harvesting) == 2:
+                            gas_harvesting.append(unit.id)
+                            actions.append([
+                                tcc.command_unit_protected,
+                                unit.id,
+                                tcc.unitcommandtypes.Right_Click_Unit,
+                                refinery
+                            ])
                         for order in unit.orders:
                             if order.type not in tcc.command2order[tcc.unitcommandtypes.Gather]\
                              and order.type not in tcc.command2order[tcc.unitcommandtypes.Build]\
                              and order.type not in tcc.command2order[tcc.unitcommandtypes.Right_Click_Position]\
                              and not building_refinery:
-                                if len(gas_harvesting) == 1:
-                                    print('one or {}'.format(gas_harvesting[0]))
-                                elif len(gas_harvesting) == 2:
-                                    pass
-                                elif len(gas_harvesting) == 3:
-                                    pass
-                                else:
-                                    print('omfg {0}'.format(len(gas_harvesting)))
-                                    target = get_closest(unit.x, unit.y, neutral)
-                                    if target is not None:
-                                        actions.append([
-                                            tcc.command_unit_protected,
-                                            unit.id,
-                                            tcc.unitcommandtypes.Right_Click_Unit,
-                                            target.id,
-                                        ])
-                            else:
-                                print('wtf {}'.format(len(gas_harvesting)))
-                        # we need to check the worker ids
-                        # and put 3 of them, including the one that build the refinery
-                        # into gas harvesting!
+                                target = get_closest(unit.x, unit.y, neutral)
+                                if target is not None:
+                                    actions.append([
+                                        tcc.command_unit_protected,
+                                        unit.id,
+                                        tcc.unitcommandtypes.Right_Click_Unit,
+                                        target.id,
+                                    ])
                     else:
                         target = get_closest(unit.x, unit.y, enemy)
                         if target is not None:
@@ -144,7 +141,5 @@ while True:
                                 tcc.unitcommandtypes.Attack_Unit,
                                 target.id,
                             ])
-                print(len(workers))
-        # print("Sending actions: {}".format(str(actions)))
         client.send(actions)
     client.close()
