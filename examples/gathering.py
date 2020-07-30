@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import torchcraft as tc
 import torchcraft.Constants as tcc
 
