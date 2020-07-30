@@ -38,10 +38,12 @@ producing = False
 
 # units
 units = None
-workers = 0
 
 # buildings
 refinery = None
+
+
+# first basics, focus on 8 supply!
 
 
 while True:
@@ -155,5 +157,12 @@ while True:
                                 tcc.unitcommandtypes.Attack_Unit,
                                 target.id,
                             ])
+                #
+                #
+                #
+                if len(workers) <= 7:
+                    producing = False
+                else:
+                    producing = True
         client.send(actions)
     client.close()
