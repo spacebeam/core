@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 # Do what you can, what you want, what you must
 # Feel the hunger inside, hold on to your trust!
 
