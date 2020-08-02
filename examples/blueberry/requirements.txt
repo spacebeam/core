@@ -1,7 +1,6 @@
 cython
 tornado
 schematics
-numpy
 torch
 pycurl
 pyzmq
