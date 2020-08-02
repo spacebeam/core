@@ -42,4 +42,3 @@ def run_producer(context, domain, port):
     logging.info("Signal the collector to syncronize the batch")
     while True:
         yield collect.send(b'0')
-
