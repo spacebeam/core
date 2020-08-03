@@ -14,7 +14,7 @@ This repository includes several requirements such as BWAPI.dll files which will
 ### Serverless
 When running the software, the host machine acts as a central repository where all bot files (including file I/O) and replays are stored.
 
-The server program monitors for new containers, maintaining a current list of instances acting as clients which can have one of the following status:
+The server monitors for new containers, maintaining a current list of instances acting as clients which can have one of the following status:
 
 - **READY**, free and ready to start,
 - **STARTING**, the match has not yet begun,
