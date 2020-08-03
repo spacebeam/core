@@ -35,7 +35,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     dpkg -i libfaudio0_20.01-0~buster_amd64.deb
     dpkg -i libfaudio0_20.01-0~buster_i386.deb
     apt -y install --install-recommends winehq-staging winetricks
-    apt install torch-core-free
+    apt -y install --install-recommends torch-core-free
     git clone https://github.com/spacebeam/starcraft-sif.git /usr/src/starcraft-sif
     cat /usr/src/starcraft-sif/include/core/core* > /opt/StarCraft.tar.gz
     tar -zxvf /opt/StarCraft.tar.gz -C /opt/
