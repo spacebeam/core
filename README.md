@@ -1,7 +1,7 @@
 # starcraft-sif
 This software is a tool for running StarCraft: Brood War
 
-an AI testbed inside a [SIF](https://github.com/hpcng/singularity) file based container image, auditable, secure, and easy to move using existing paradigms.
+inside a [SIF](https://github.com/hpcng/singularity) file based container image, auditable, secure, and easy to move using existing paradigms.
 
 It can download and launch C++ and Java bots or any TorchCraft bot with support for BWAPI `4.1.2, 4.2.0, 4.4.0`.
 
@@ -55,7 +55,6 @@ Host a bot vs bot game.
 ```
 $ luna -u starcraft run -x 'play --bots Locutus:Blueberry'
 ```
-
 
 ## Settings
 All configuration is done in `/etc/luna/units.d/starcraft.yml`. This file must exist or the competition will not start.
@@ -151,7 +150,7 @@ port: 58008
 speed: Normal
 ```
 ## Help wanted
-Would you like to help with the project? Pick any of the issues [and contribute](https://github.com/spacebeam/starcraft-sif/labels/help%20wanted)!
+Would you like to help with the project? Pick any of the issues and [contribute](https://github.com/spacebeam/starcraft-sif/issues)!
 
 ## Contributing
 See [Contributing](CONTRIBUTING.md).
