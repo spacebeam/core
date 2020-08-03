@@ -1,7 +1,7 @@
 # starcraft-sif
 This software is a tool for running StarCraft: Brood War as AI testbed inside a [SIF](https://github.com/hpcng/singularity) file based container image, auditable, secure, and easy to move using existing data mobility paradigms.
 
-It can download and launch Win32 C++ and Java bots or any Linux® bot with support for BWAPI `4.1.2, 4.2.0, 4.4.0`.
+It can download and launch Win32 C++ and Java bots or any TorchCraft Linux® bot with support for BWAPI `4.1.2, 4.2.0, 4.4.0`.
 
 It uses a server/client architecture with the host acting as a server and any number of other containers acting as clients.
 
