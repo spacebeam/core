@@ -29,9 +29,9 @@ Normally a new game can be started only if:
 Once these two conditions are met, the server sends the required bot files, map and BWAPI.dll to the clients, specifying one as the host and another as the away machine. Those client's status are then set to **STARTING**.
 
 ### Clients
-Each client is handled by independent processes, and if the client is **STARTING**, **RUNNING**, or **SENDING**, it sends periodic status updates back for remote monitoring.
+Each client is handled by independent processes, and if the client status is **STARTING**, **RUNNING**, or **SENDING**, it sends periodic updates back for remote monitoring.
 
-When a game finishes the results are sent back along with file I/O data and replay files, which are stored on the server.
+When a game finishes the results are sent back along with file I/O data and replay, which are stored on the host.
 
 ## Getting started
 Your system need the latest release of Erlang, LuaJIT (with luarocks) and Singularity installed.
