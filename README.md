@@ -10,7 +10,7 @@ All data send and received pass through ZMQ sockets, no special network configur
 This repository includes several requirements such as BWAPI.dll files which will automatically be configured and run.
 
 ### Serverless
-When running the software, the host machine acts as a central repository where all bot files (including file I/O) data, cumulative results, and replays are stored.
+When running the software, the host machine acts as a central repository where all bot files (including file I/O) data and replays are stored.
 
 The server program has an independent process which monitors for new container connections and detects disconnections, maintaining a current list of instances acting as clients which can have one of the following status:
 
@@ -148,7 +148,7 @@ port: 58008
 speed: Normal
 ```
 ## Help wanted
-Would you like to help with the project? Pick any of the issues tagged [help wanted](https://github.com/spacebeam/starcraft-sif/labels/help%20wanted) and contribute!
+Would you like to help with the project? Pick any of the issues [and contribute](https://github.com/spacebeam/starcraft-sif/labels/help%20wanted)!
 
 ## Contributing
-See  [Contributing](CONTRIBUTING.md).
+See [Contributing](CONTRIBUTING.md).
