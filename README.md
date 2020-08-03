@@ -71,7 +71,7 @@ All configuration is done in `/etc/luna/units.d/starcraft.yml`. This file must e
     <td>bots</td>
     <td>
         <b>Type:</b> List of strings<br><br>
-        These bots will play in the competition.
+        These bots will play in the competition.<br>
         Each directory must contain a valid bot.yml file with the following name/value pairs:
         <ul>
         <li><b>name:</b> String name of the bot, matching the bot directory name</li>
