@@ -20,7 +20,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     dpkg --add-architecture i386
     apt-add-repository contrib
     apt-add-repository non-free 
-    curl -C - --output winehq.key https://dl.winehq.org/wine-builds/winehq.key 
+    wget -nc https://dl.winehq.org/wine-builds/winehq.key 
     apt-key add winehq.key
     apt-add-repository 'deb https://dl.winehq.org/wine-builds/debian/ buster main'
     apt update && rm winehq.key
@@ -41,7 +41,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
     tar -zxvf /opt/StarCraft.tar.gz -C /opt/
     pip3 install -r /usr/src/starcraft-sif/examples/blueberry/requirements.txt
     git clone https://github.com/TorchCraft/TorchCraft.git /usr/src/TorchCraft --recursive
-    pip3 install /usr/src/TorchCraft
+    pip3 install pybind11 && pip3 install /usr/src/TorchCraft
     luarocks install lyaml YAML_LIBDIR=/usr/lib/x86_64-linux-gnu/
     luarocks install luasec OPENSSL_LIBDIR=/usr/lib/x86_64-linux-gnu/
     git clone https://github.com/spacebeam/bw.git /opt/bw
