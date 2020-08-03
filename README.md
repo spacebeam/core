@@ -5,7 +5,7 @@ It can download and launch Win32 C++ and Java bots or any Linux® bot with suppo
 
 It uses a server/client architecture with the host acting as a server and any number of other containers acting as clients.
 
-All data send and received pass through ZMQ sockets, no special network configuration is required to run the software.
+All data send and received pass through ZeroMQ sockets, no special network configuration is required.
 
 This repository includes several requirements such as BWAPI.dll files which will automatically be configured and run.
 
