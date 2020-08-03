@@ -45,7 +45,7 @@ Then run this command:
 
 ## Good luck, have fun 
 
-Play against [Ophelia](https://liquipedia.net/starcraft/Ophelia) or any other bot on competitive maps,
+Play against [Ophelia](https://liquipedia.net/starcraft/Ophelia) or [Blueberry](https://liquipedia.net/starcraft/Blueberry) on any other bot on competitive maps,
 ```
 $ luna -u starcraft run -x 'play --bots Ophelia'
 ```
