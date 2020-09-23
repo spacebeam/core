@@ -1,7 +1,0 @@
-cython
-tornado
-schematics
-torch
-pycurl
-pyzmq
-ujson
