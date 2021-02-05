@@ -45,7 +45,7 @@ Then run this command:
 
 ## Good luck, have fun 
 
-Play against [Ophelia](https://liquipedia.net/starcraft/Ophelia) or [Blueberry](https://liquipedia.net/starcraft/Blueberry) on any other bot on competitive maps,
+Play against [Ophelia](https://liquipedia.net/starcraft/Ophelia) or any other bot on competitive maps,
 ```
 $ luna -u starcraft run -x 'play --bots Ophelia'
 ```
@@ -53,7 +53,7 @@ $ luna -u starcraft run -x 'play --bots Ophelia'
 Host a bot vs bot game.
 
 ```
-$ luna -u starcraft run -x 'play --bots Locutus:Blueberry'
+$ luna -u starcraft run -x 'play --bots Locutus:Ophelia'
 ```
 
 ## Settings
@@ -134,7 +134,6 @@ bots:
     - StyxZ
     - ZZZKBot
     - Ophelia
-    - Blueberry
 maps:
     - Circuit Breaker
     - Aztec
@@ -149,8 +148,6 @@ host: 127.0.0.1
 port: 58008
 speed: Normal
 ```
-## Help wanted
-Would you like to help with the project? Pick any of the issues and [contribute](https://github.com/spacebeam/starcraft-sif/issues)!
 
 ## Contributing
 See [Contributing](CONTRIBUTING.md).
