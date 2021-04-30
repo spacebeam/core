@@ -49,18 +49,12 @@ MirrorURL: http://ftp.us.debian.org/debian/
     apt -y install --install-recommends winehq-staging winetricks
     apt -y install --install-recommends torch-core-free python3-pip libzmq3-dev
 
-    # TODO: this require work-in-progress updates @core first!
-
     git clone https://github.com/spacebeam/starcraft-sif.git /usr/src/starcraft-sif
     cat /usr/src/starcraft-sif/include/core/core* > /opt/StarCraft.tar.gz
     tar -zxvf /opt/StarCraft.tar.gz -C /opt/
 
-    # TODO: this step must be broken!
-
-    pip3 install -r /usr/src/starcraft-sif/examples/blueberry/requirements.txt
-
-
-    git clone https://github.com/TorchCraft/TorchCraft.git /usr/src/TorchCraft --recursive
+    git clone https://github.com/jchassoul/TorchCraft.git /usr/src/TorchCraft --recursive
+    cd /usr/src/TorchCraft && luarocks make *.rockspec
     pip3 install pybind11 && pip3 install /usr/src/TorchCraft
 
     luarocks install lyaml YAML_LIBDIR=/usr/lib/x86_64-linux-gnu/
@@ -75,6 +69,7 @@ MirrorURL: http://ftp.us.debian.org/debian/
 
     xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine WINEARCH=win32 wineboot
     xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q vcrun2012
+    xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q vcrun2013
     xvfb-run sudo -u wine env DISPLAY=:1 HOME=/home/wine USER=wine USERNAME=wine LOGNAME=wine winetricks -q dxvk
 
     bash /usr/src/starcraft-scif/include/install_java.sh
